@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Ranczo u Górala | Domek Całoroczny na Wynajem, Żarnowa</title>
   <meta name="description" content="Domek całoroczny na wynajem w Żarnowej — blisko lasu, z prywatnym jacuzzi, dla maksymalnie 10 osób. Sprawdź wolne terminy.">
   
@@ -53,15 +53,18 @@
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 16px;
-      --shadow-sm: 0 2px 8px rgba(46, 38, 32, 0.04);
-      --shadow-md: 0 8px 24px rgba(46, 38, 32, 0.07);
-      --shadow-lg: 0 16px 40px rgba(46, 38, 32, 0.12);
-      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-sm: 0 2px 6px rgba(46, 38, 32, 0.04);
+      --shadow-md: 0 6px 18px rgba(46, 38, 32, 0.06);
+      --shadow-lg: 0 12px 30px rgba(46, 38, 32, 0.1);
+      --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
     html {
       scroll-behavior: smooth;
       font-size: 16px;
+      overflow-x: hidden;
+      max-width: 100vw;
+      width: 100%;
     }
     
     body {
@@ -70,7 +73,14 @@
       color: var(--text-main);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
+      max-width: 100vw;
+      width: 100%;
+      position: relative;
+      touch-action: pan-y;
+      -webkit-overflow-scrolling: touch;
+      text-rendering: optimizeSpeed;
     }
     
     h1, h2, h3, h4, .brand-font {
@@ -78,6 +88,8 @@
       font-weight: 600;
       line-height: 1.25;
       color: var(--dark-accent);
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
     
     a {
@@ -90,25 +102,24 @@
       max-width: 100%;
       height: auto;
       display: block;
-      content-visibility: auto;
     }
     
     .container {
       width: 100%;
       max-width: 1240px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
     
     .section-padding {
-      padding: 96px 0;
+      padding: 80px 0;
     }
     
     /* TYPOGRAPHY HELPERS */
     .section-header {
       text-align: center;
       max-width: 760px;
-      margin: 0 auto 56px auto;
+      margin: 0 auto 48px auto;
     }
     
     .section-tag {
@@ -122,7 +133,7 @@
     }
     
     .section-title {
-      font-size: 2.25rem;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
       margin-bottom: 16px;
     }
     
@@ -144,8 +155,9 @@
       cursor: pointer;
       border: 1px solid transparent;
       transition: var(--transition-smooth);
-      white-space: nowrap;
+      white-space: normal;
       text-align: center;
+      -webkit-tap-highlight-color: transparent;
     }
     
     .btn-primary {
@@ -153,33 +165,34 @@
       color: #ffffff;
     }
     
-    .btn-primary:hover {
-      background-color: var(--primary-wood-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(138, 106, 69, 0.28);
+    @media (hover: hover) {
+      .btn-primary:hover {
+        background-color: var(--primary-wood-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(138, 106, 69, 0.25);
+      }
+    }
+    
+    .btn-primary:active {
+      transform: translateY(0);
     }
     
     .btn-secondary {
-      background-color: rgba(255, 255, 255, 0.14);
+      background-color: rgba(255, 255, 255, 0.16);
       color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.28);
-      backdrop-filter: blur(8px);
+      border-color: rgba(255, 255, 255, 0.3);
     }
     
-    .btn-secondary:hover {
-      background-color: rgba(255, 255, 255, 0.25);
-      border-color: rgba(255, 255, 255, 0.45);
-      transform: translateY(-2px);
+    @media (hover: hover) {
+      .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.45);
+        transform: translateY(-2px);
+      }
     }
     
-    .btn-dark {
-      background-color: var(--dark-accent);
-      color: #ffffff;
-    }
-    
-    .btn-dark:hover {
-      background-color: #1a1512;
-      transform: translateY(-2px);
+    .btn-secondary:active {
+      transform: translateY(0);
     }
     
     .btn-outline-wood {
@@ -188,10 +201,12 @@
       border: 1px solid rgba(138, 106, 69, 0.45);
     }
     
-    .btn-outline-wood:hover {
-      background-color: rgba(138, 106, 69, 0.2);
-      border-color: var(--primary-wood);
-      color: #ffffff;
+    @media (hover: hover) {
+      .btn-outline-wood:hover {
+        background-color: rgba(138, 106, 69, 0.2);
+        border-color: var(--primary-wood);
+        color: #ffffff;
+      }
     }
     
     /* ICONS (INLINE SVG) */
@@ -207,13 +222,8 @@
     }
     
     .icon-lg {
-      width: 28px;
-      height: 28px;
-    }
-    
-    .icon-xl {
-      width: 36px;
-      height: 36px;
+      width: 26px;
+      height: 26px;
     }
     
     /* 1. NAWIGACJA */
@@ -223,40 +233,47 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background-color: rgba(46, 38, 32, 0.94);
-      backdrop-filter: blur(12px);
+      background-color: rgba(46, 38, 32, 0.97);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      transition: var(--transition-smooth);
+      transition: background-color 0.2s ease;
+      contain: layout paint;
+    }
+    
+    @media (min-width: 769px) {
+      #navbar {
+        backdrop-filter: blur(12px);
+        background-color: rgba(46, 38, 32, 0.92);
+      }
     }
     
     .nav-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
+      height: 72px;
     }
     
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       color: #ffffff;
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-family: 'Fraunces', Georgia, serif;
       font-weight: 600;
       letter-spacing: 0.02em;
     }
     
     .nav-logo-icon {
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       color: var(--primary-wood);
     }
     
     .nav-links {
       display: none;
       align-items: center;
-      gap: 32px;
+      gap: 28px;
       list-style: none;
     }
     
@@ -295,6 +312,7 @@
       border: none;
       cursor: pointer;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
     
     .nav-toggle span {
@@ -303,7 +321,7 @@
       height: 2px;
       background-color: #ffffff;
       border-radius: 2px;
-      transition: var(--transition-smooth);
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
     
     .nav-toggle.active span:nth-child(1) {
@@ -323,13 +341,14 @@
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 80px;
+      top: 72px;
       left: 0;
       width: 100%;
       background-color: var(--dark-surface);
       border-bottom: 1px solid var(--border-dark);
-      padding: 24px;
+      padding: 24px 20px;
       box-shadow: var(--shadow-lg);
+      contain: layout paint;
     }
     
     .mobile-menu.open {
@@ -346,8 +365,10 @@
     
     .mobile-menu-links a {
       color: var(--text-light);
-      font-size: 1.125rem;
+      font-size: 1.0625rem;
       font-weight: 500;
+      display: block;
+      padding: 4px 0;
     }
     
     .mobile-menu-cta {
@@ -359,15 +380,16 @@
     /* 2. HERO SECTION */
     #hero {
       position: relative;
-      min-height: 100vh;
+      min-height: 92vh;
       display: flex;
       align-items: center;
-      padding-top: 80px;
+      padding-top: 72px;
       background-image: url('https://i.ibb.co/HTs1zLGT/769007941-122105251899422300-67517021702331855-n.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       color: #ffffff;
+      overflow: hidden;
     }
     
     .hero-overlay {
@@ -376,43 +398,44 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(180deg, rgba(30, 24, 19, 0.72) 0%, rgba(30, 24, 19, 0.88) 100%);
+      background: linear-gradient(180deg, rgba(30, 24, 19, 0.75) 0%, rgba(30, 24, 19, 0.9) 100%);
     }
     
     .hero-content {
       position: relative;
       z-index: 10;
-      max-width: 860px;
-      padding: 64px 0;
+      max-width: 840px;
+      padding: 48px 0;
     }
     
     .hero-location-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 8px 18px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 6px 14px;
       border-radius: 40px;
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
       font-weight: 500;
       color: #f0eae1;
-      margin-bottom: 24px;
-      backdrop-filter: blur(6px);
+      margin-bottom: 20px;
+      max-width: 100%;
+      flex-wrap: wrap;
     }
     
     .hero-title {
-      font-size: 2.75rem;
+      font-size: clamp(1.85rem, 5.5vw, 3.25rem);
       color: #ffffff;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       letter-spacing: -0.01em;
     }
     
     .hero-subtitle {
-      font-size: 1.1875rem;
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
       color: #e5ded5;
-      margin-bottom: 28px;
-      line-height: 1.7;
+      margin-bottom: 24px;
+      line-height: 1.65;
       max-width: 720px;
     }
     
@@ -420,15 +443,16 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 12px 20px;
+      gap: 10px 16px;
       color: var(--primary-wood-light);
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       font-weight: 500;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
+      max-width: 100%;
     }
     
     .hero-feature-item {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
     }
@@ -440,7 +464,7 @@
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 12px;
     }
     
     /* 3. TRUST BAR */
@@ -449,27 +473,28 @@
       color: #ffffff;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 32px 0;
+      padding: 28px 0;
     }
     
     .trust-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 18px;
     }
     
     .trust-card {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 8px;
+      gap: 14px;
+      padding: 4px;
+      min-width: 0;
     }
     
     .trust-icon-box {
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border-radius: var(--radius-sm);
-      background-color: rgba(138, 106, 69, 0.2);
+      background-color: rgba(138, 106, 69, 0.25);
       border: 1px solid rgba(138, 106, 69, 0.4);
       display: flex;
       align-items: center;
@@ -479,14 +504,14 @@
     }
     
     .trust-text-title {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: #ffffff;
       margin-bottom: 2px;
     }
     
     .trust-text-desc {
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
       color: var(--text-light-muted);
     }
     
@@ -498,17 +523,19 @@
     .about-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 48px;
+      gap: 40px;
       align-items: center;
     }
     
     .about-image-wrapper {
       position: relative;
+      width: 100%;
+      max-width: 100%;
     }
     
     .about-image-main {
       width: 100%;
-      height: 440px;
+      height: 380px;
       object-fit: cover;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-md);
@@ -516,68 +543,79 @@
     }
     
     .about-badge {
-      position: absolute;
-      bottom: -16px;
-      right: 16px;
       background-color: var(--dark-accent);
       color: #ffffff;
-      padding: 16px 24px;
+      padding: 14px 20px;
       border-radius: var(--radius-md);
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-md);
       border: 1px solid var(--border-dark);
+      display: inline-block;
+      margin-top: 14px;
+    }
+    
+    @media (min-width: 769px) {
+      .about-badge {
+        position: absolute;
+        bottom: -16px;
+        right: 16px;
+        margin-top: 0;
+        box-shadow: var(--shadow-lg);
+      }
     }
     
     .about-badge-number {
       font-family: 'Fraunces', serif;
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: var(--primary-wood-light);
       display: block;
     }
     
     .about-badge-label {
-      font-size: 0.8125rem;
+      font-size: 0.75rem;
       color: var(--text-light-muted);
     }
     
     .about-content-title {
-      font-size: 2.25rem;
-      margin-bottom: 20px;
+      font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+      margin-bottom: 16px;
     }
     
     .about-paragraph {
-      font-size: 1.0625rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
-      margin-bottom: 16px;
-      line-height: 1.7;
+      margin-bottom: 14px;
+      line-height: 1.65;
     }
     
     .amenities-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 32px;
+      gap: 10px;
+      margin-top: 24px;
     }
     
     .amenity-item {
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 12px 16px;
+      padding: 10px 14px;
       background-color: var(--bg-surface);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-sm);
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       font-weight: 500;
       color: var(--text-main);
       box-shadow: var(--shadow-sm);
+      min-width: 0;
     }
     
     .amenity-icon {
       color: var(--primary-wood);
+      flex-shrink: 0;
     }
     
-    /* 5. GALERIA (OPTYMALIZOWANA DLA SZYBKIEGO ŁADOWANIA) */
+    /* 5. GALERIA (SZYBKA I PŁYNNA NA MOBILE) */
     #galeria {
       background-color: var(--bg-subtle);
     }
@@ -585,62 +623,74 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 14px;
+      width: 100%;
     }
     
     .gallery-card {
       position: relative;
       aspect-ratio: 4 / 3;
-      height: 260px;
+      height: 240px;
       border-radius: var(--radius-md);
       overflow: hidden;
       cursor: pointer;
-      background: linear-gradient(135deg, #e5ddd3 0%, #d8cec2 100%);
+      background-color: #dfd7cc;
       box-shadow: var(--shadow-sm);
+      content-visibility: auto;
+      contain-intrinsic-size: 240px;
+      contain: layout paint;
+      -webkit-tap-highlight-color: transparent;
     }
     
     .gallery-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+      display: block;
     }
     
-    .gallery-card:hover .gallery-img {
-      transform: scale(1.04);
-      filter: brightness(0.92);
+    @media (hover: hover) {
+      .gallery-img {
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+      }
+      .gallery-card:hover .gallery-img {
+        transform: scale(1.03);
+        filter: brightness(0.94);
+      }
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(46, 38, 32, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+      }
+      .gallery-card:hover .gallery-overlay {
+        opacity: 1;
+      }
+      .gallery-zoom-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--dark-accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(6px);
+        transition: transform 0.25s ease;
+      }
+      .gallery-card:hover .gallery-zoom-icon {
+        transform: translateY(0);
+      }
     }
     
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(46, 38, 32, 0.35);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .gallery-card:hover .gallery-overlay {
-      opacity: 1;
-    }
-    
-    .gallery-zoom-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.92);
-      color: var(--dark-accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform: translateY(8px);
-      transition: transform 0.3s ease;
-    }
-    
-    .gallery-card:hover .gallery-zoom-icon {
-      transform: translateY(0);
+    @media (hover: none) {
+      .gallery-overlay {
+        display: none;
+      }
     }
     
     /* 6. DLA KOGO */
@@ -651,52 +701,57 @@
     .audience-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 16px;
     }
     
     .audience-card {
       background-color: var(--bg-surface);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      padding: 36px 28px;
-      transition: var(--transition-smooth);
+      padding: 28px 22px;
       box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
       height: 100%;
+      min-width: 0;
     }
     
-    .audience-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(138, 106, 69, 0.4);
+    @media (hover: hover) {
+      .audience-card {
+        transition: var(--transition-smooth);
+      }
+      .audience-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+        border-color: rgba(138, 106, 69, 0.4);
+      }
     }
     
     .audience-icon-box {
-      width: 54px;
-      height: 54px;
+      width: 48px;
+      height: 48px;
       border-radius: var(--radius-md);
       background-color: var(--primary-wood-light);
       color: var(--primary-wood);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     
     .audience-title {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
       color: var(--dark-accent);
     }
     
     .audience-desc {
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       color: var(--text-muted);
       line-height: 1.6;
     }
     
-    /* 7. KONTAKT (CZYSTY UKŁAD BEZ FORMULARZA) */
+    /* 7. KONTAKT I REZERWACJA */
     #kontakt {
       background-color: var(--dark-accent);
       color: #ffffff;
@@ -710,29 +765,30 @@
     .contact-wrapper {
       max-width: 1100px;
       margin: 0 auto;
+      width: 100%;
     }
     
     .contact-intro-box {
       background-color: var(--dark-surface);
       border: 1px solid var(--border-dark);
       border-radius: var(--radius-lg);
-      padding: 40px;
-      margin-bottom: 36px;
+      padding: 28px 20px;
+      margin-bottom: 24px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      box-shadow: var(--shadow-lg);
+      gap: 16px;
+      box-shadow: var(--shadow-md);
     }
     
     .contact-intro-header {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
     
     .contact-intro-icon {
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border-radius: var(--radius-sm);
       background-color: rgba(138, 106, 69, 0.25);
       color: var(--primary-wood-light);
@@ -743,49 +799,55 @@
     }
     
     .contact-intro-title {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       color: #ffffff;
     }
     
     .contact-intro-desc {
-      font-size: 1.0625rem;
+      font-size: 0.95rem;
       color: var(--text-light-muted);
-      line-height: 1.7;
+      line-height: 1.65;
     }
     
     .contact-cards-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 16px;
+      width: 100%;
     }
     
     .contact-action-card {
       background-color: var(--dark-card);
       border: 1px solid var(--border-dark);
       border-radius: var(--radius-lg);
-      padding: 28px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 24px;
-      transition: var(--transition-smooth);
+      gap: 18px;
+      min-width: 0;
     }
     
-    .contact-action-card:hover {
-      border-color: var(--primary-wood);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
+    @media (hover: hover) {
+      .contact-action-card {
+        transition: var(--transition-smooth);
+      }
+      .contact-action-card:hover {
+        border-color: var(--primary-wood);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
     }
     
     .contact-card-top {
       display: flex;
       align-items: flex-start;
-      gap: 16px;
+      gap: 14px;
     }
     
     .contact-card-icon {
-      width: 46px;
-      height: 46px;
+      width: 42px;
+      height: 42px;
       border-radius: var(--radius-sm);
       background-color: rgba(138, 106, 69, 0.25);
       color: #ffffff;
@@ -796,27 +858,28 @@
     }
     
     .contact-card-label {
-      font-size: 0.8125rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--primary-wood-light);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       display: block;
     }
     
     .contact-card-value {
-      font-size: 1.3rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: #ffffff;
       font-family: 'Fraunces', Georgia, serif;
       line-height: 1.3;
+      word-break: break-word;
     }
     
     .contact-card-subtext {
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
       color: var(--text-light-muted);
-      margin-top: 6px;
-      line-height: 1.5;
+      margin-top: 4px;
+      line-height: 1.45;
     }
     
     /* 8. STOPKA */
@@ -824,35 +887,36 @@
       background-color: var(--dark-surface);
       color: var(--text-light-muted);
       border-top: 1px solid var(--border-dark);
-      padding: 64px 0 32px 0;
+      padding: 48px 0 28px 0;
       font-size: 0.875rem;
     }
     
     .footer-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 40px;
-      margin-bottom: 48px;
+      gap: 32px;
+      margin-bottom: 36px;
     }
     
     .footer-brand-title {
       color: #ffffff;
-      font-size: 1.375rem;
-      margin-bottom: 12px;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
     }
     
     .footer-desc {
       color: var(--text-light-muted);
       line-height: 1.6;
       max-width: 380px;
+      font-size: 0.875rem;
     }
     
     .footer-heading {
       color: #ffffff;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-family: 'Inter', sans-serif;
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       letter-spacing: 0.04em;
     }
     
@@ -860,7 +924,7 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
     
     .footer-links a:hover {
@@ -869,25 +933,28 @@
     
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.06);
-      padding-top: 24px;
+      padding-top: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       text-align: center;
+      font-size: 0.8125rem;
     }
     
     /* LIGHTBOX MODAL */
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(18, 14, 11, 0.94);
+      background: rgba(18, 14, 11, 0.96);
       z-index: 2000;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 24px;
-      backdrop-filter: blur(10px);
+      padding: 16px;
+      max-width: 100vw;
+      overflow: hidden;
+      touch-action: none;
     }
     
     .lightbox.active {
@@ -896,165 +963,149 @@
     
     .lightbox-content {
       position: relative;
-      max-width: 1000px;
-      max-height: 85vh;
+      max-width: 960px;
+      max-height: 80vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 100%;
     }
     
     .lightbox-image {
       max-width: 100%;
-      max-height: 85vh;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-lg);
+      max-height: 75vh;
+      border-radius: var(--radius-sm);
       object-fit: contain;
     }
     
     .lightbox-btn {
       position: absolute;
-      background: rgba(46, 38, 32, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(46, 38, 32, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       color: #ffffff;
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: var(--transition-smooth);
       z-index: 2010;
-    }
-    
-    .lightbox-btn:hover {
-      background: var(--primary-wood);
+      -webkit-tap-highlight-color: transparent;
     }
     
     .lightbox-close {
-      top: -48px;
-      right: 0;
+      top: 14px;
+      right: 14px;
     }
     
     .lightbox-prev {
-      left: -60px;
+      left: 10px;
       top: 50%;
       transform: translateY(-50%);
     }
     
     .lightbox-next {
-      right: -60px;
+      right: 10px;
       top: 50%;
       transform: translateY(-50%);
     }
     
     .lightbox-counter {
       position: absolute;
-      bottom: -36px;
+      bottom: -28px;
       left: 50%;
       transform: translateX(-50%);
       color: var(--text-light-muted);
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
     }
     
-    /* REVEAL ANIMATIONS */
+    /* REVEAL ANIMATIONS OPTIMIZED */
     .reveal {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(12px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+      will-change: opacity, transform;
     }
     
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
+      will-change: auto;
     }
     
-    /* BREAKPOINTS */
-    @media (min-width: 768px) {
-      .hero-title {
-        font-size: 3.5rem;
-      }
-      
-      .section-title {
-        font-size: 2.75rem;
-      }
-      
-      .trust-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .amenities-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
+    /* DESKTOP BREAKPOINTS */
+    @media (min-width: 640px) {
       .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      
-      .audience-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
       .contact-cards-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .section-padding {
+        padding: 96px 0;
+      }
+      .container {
+        padding: 0 24px;
+      }
+      .hero-title {
+        font-size: 3.5rem;
+      }
+      .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
       .footer-grid {
         grid-template-columns: 2fr 1fr 1fr;
       }
-      
       .footer-bottom {
         flex-direction: row;
         justify-content: space-between;
       }
+      .lightbox-prev {
+        left: 20px;
+      }
+      .lightbox-next {
+        right: 20px;
+      }
+      .lightbox-close {
+        top: 20px;
+        right: 20px;
+      }
     }
     
-    @media (min-width: 1100px) {
+    @media (min-width: 1080px) {
       .nav-links {
         display: flex;
       }
-      
       .nav-cta-wrapper {
         display: flex;
       }
-      
       .nav-toggle {
         display: none;
       }
-      
       .trust-grid {
         grid-template-columns: repeat(4, 1fr);
       }
-      
       .about-grid {
         grid-template-columns: 1.1fr 0.9fr;
       }
-      
       .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
       }
-      
       .audience-grid {
         grid-template-columns: repeat(4, 1fr);
       }
-    }
-    
-    @media (max-width: 600px) {
-      .lightbox-prev {
-        left: 10px;
-      }
-      .lightbox-next {
-        right: 10px;
-      }
-      .lightbox-close {
-        top: 10px;
-        right: 10px;
-      }
-      .contact-intro-box {
-        padding: 24px;
-      }
-      .contact-action-card {
-        padding: 20px;
+      .about-image-main {
+        height: 440px;
       }
     }
   </style>
@@ -1127,7 +1178,7 @@
             <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
             <circle cx="12" cy="10" r="3"/>
           </svg>
-          <span>Żarnowa 285 &bull; Nowo otwarty obiekt całoroczny</span>
+          <span>Żarnowa 285 &bull; Obiekt całoroczny</span>
         </div>
         
         <h1 class="hero-title">Domek całoroczny blisko lasu &mdash; cisza, natura i prywatne jacuzzi</h1>
@@ -1161,8 +1212,6 @@
             <svg class="icon" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10"/>
               <path d="M8 12a4 4 0 0 1 8 0"/>
-              <path d="M12 2v2"/>
-              <path d="M12 20v2"/>
             </svg>
             <span>Prywatne jacuzzi</span>
           </div>
@@ -1236,7 +1285,7 @@
           </div>
           <div>
             <div class="trust-text-title">Prywatne Jacuzzi</div>
-            <div class="trust-text-desc">Relaks w gorącej wodzie na zewnątrz</div>
+            <div class="trust-text-desc">Relaks w gorącej wodzie</div>
           </div>
         </div>
         
@@ -1250,7 +1299,7 @@
           </div>
           <div>
             <div class="trust-text-title">Bliskość Natury</div>
-            <div class="trust-text-desc">Zielona działka przy samej ścianie lasu</div>
+            <div class="trust-text-desc">Działka przy ścianie lasu</div>
           </div>
         </div>
       </div>
@@ -1268,7 +1317,7 @@
             Ranczo u Górala to nowo otwarty, całoroczny domek położony w malowniczej, cichej okolicy bezpośrednio przy lesie. To miejsce stworzone z myślą o osobach poszukujących autentycznego wytchnienia od miejskiego zgiełku.
           </p>
           <p class="about-paragraph">
-            Ciepłe, starannie wykończone naturalnym drewnem wnętrza tworzą przytulną i elegancką atmosferę. Do dyspozycji gości oddajemy 4 niezależne, komfortowe sypialnie — każda posiada własną, nowoczesną łazienkę, co zapewnia pełną wygodę i prywatność wszystkim mieszkańcom.
+            Ciepłe, starannie wykończone naturalnym drewnem wnętrza tworzą przytulną atmosferę. Do dyspozycji gości oddajemy 4 niezależne, komfortowe sypialnie — każda posiada własną, nowoczesną łazienkę, co zapewnia pełną wygodę i prywatność wszystkim mieszkańcom.
           </p>
           <p class="about-paragraph">
             Na zewnątrz czeka na Państwa rozległy, ogrodzony zielony teren oraz prywatne jacuzzi, idealne na wieczorny relaks o każdej porze roku.
@@ -1287,7 +1336,6 @@
               <svg class="icon amenity-icon" viewBox="0 0 24 24">
                 <path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-2.12 0l-.88.88a1.5 1.5 0 0 0 0 2.12L6 9"/>
                 <path d="m9 6 11 11a2 2 0 0 1-2.83 2.83L6.17 8.83"/>
-                <circle cx="12" cy="12" r="1"/>
               </svg>
               <span>Osobne łazienki w każdym pokoju</span>
             </div>
@@ -1353,24 +1401,24 @@
     </div>
   </section>
 
-  <!-- 5. GALERIA (WSZYSTKIE 32 ZDJĘCIA Z SZYBKIM ŁADOWANIEM) -->
+  <!-- 5. GALERIA (SZYBKA, LEKKA I PŁYNNA) -->
   <section id="galeria" class="section-padding">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Fotogaleria</span>
         <h2 class="section-title">Galeria obiektu i otoczenia</h2>
         <p class="section-description">
-          Zobacz wnętrza, wyposażenie sypialni i łazienek, strefę wypoczynku oraz zielone otoczenie Rancza u Górala. Kliknij dowolne zdjęcie, aby je powiększyć.
+          Zobacz wnętrza, wyposażenie sypialni i łazienek, strefę wypoczynku oraz otoczenie Rancza u Górala. Kliknij dowolne zdjęcie, aby powiększyć.
         </p>
       </div>
       
       <div class="gallery-grid" id="gallery-container">
-        <!-- 32 Gallery Cards with decoding="async" and loading="lazy" -->
+        <!-- 33 Gallery Cards -->
         <div class="gallery-card reveal" data-index="0">
           <img src="https://i.ibb.co/3mCsjLSH/769032935-122105262255422300-283267619270869382-n.jpg" alt="Ranczo u Górala - Zdjęcie 1" class="gallery-img" decoding="async" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1379,7 +1427,7 @@
           <img src="https://i.ibb.co/xtv5d0zh/768963568-122105262339422300-6561241769418835323-n.jpg" alt="Ranczo u Górala - Zdjęcie 2" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1388,7 +1436,7 @@
           <img src="https://i.ibb.co/67hjt3HB/769051422-122105262399422300-17403440766073956-n.jpg" alt="Ranczo u Górala - Zdjęcie 3" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1397,7 +1445,7 @@
           <img src="https://i.ibb.co/wZSw2Z7H/768963132-122105262585422300-7005273041075571276-n.jpg" alt="Ranczo u Górala - Zdjęcie 4" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1406,7 +1454,7 @@
           <img src="https://i.ibb.co/HL4hGj3v/768963070-122105262663422300-4586021262434033466-n.jpg" alt="Ranczo u Górala - Zdjęcie 5" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1415,7 +1463,7 @@
           <img src="https://i.ibb.co/0v0J5Lz/768992378-122105262753422300-1207525654136729075-n.jpg" alt="Ranczo u Górala - Zdjęcie 6" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1424,7 +1472,7 @@
           <img src="https://i.ibb.co/3qz8qSC/769051842-122105262843422300-8340312587898734795-n.jpg" alt="Ranczo u Górala - Zdjęcie 7" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1433,7 +1481,7 @@
           <img src="https://i.ibb.co/HDVqwhYC/768987794-122105262981422300-4027080823806270436-n.jpg" alt="Ranczo u Górala - Zdjęcie 8" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1442,7 +1490,7 @@
           <img src="https://i.ibb.co/yc6vLC3F/769007333-122105263065422300-137344023645452630-n.jpg" alt="Ranczo u Górala - Zdjęcie 9" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1451,7 +1499,7 @@
           <img src="https://i.ibb.co/m5ZGM9CH/768941455-122105263173422300-6022859613526721767-n.jpg" alt="Ranczo u Górala - Zdjęcie 10" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1460,7 +1508,7 @@
           <img src="https://i.ibb.co/PsGTGfNw/768987800-122105263245422300-6305828592665623187-n.jpg" alt="Ranczo u Górala - Zdjęcie 11" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1469,7 +1517,7 @@
           <img src="https://i.ibb.co/1JtWRy87/768992384-122105263371422300-4856415714265361896-n.jpg" alt="Ranczo u Górala - Zdjęcie 12" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1478,7 +1526,7 @@
           <img src="https://i.ibb.co/4RQ5X8Bw/768976251-122105263431422300-1743003416655206308-n.jpg" alt="Ranczo u Górala - Zdjęcie 13" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1487,7 +1535,7 @@
           <img src="https://i.ibb.co/YByNNDXB/767872387-122105263491422300-2497388772083126420-n.jpg" alt="Ranczo u Górala - Zdjęcie 14" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1496,7 +1544,7 @@
           <img src="https://i.ibb.co/99RCD85k/769182866-122105263581422300-6495423246210253138-n.jpg" alt="Ranczo u Górala - Zdjęcie 15" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1505,7 +1553,7 @@
           <img src="https://i.ibb.co/4wV0v4H0/769032898-122105263635422300-3192891482482475117-n.jpg" alt="Ranczo u Górala - Zdjęcie 16" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1514,7 +1562,7 @@
           <img src="https://i.ibb.co/WWfTzX4p/768967709-122105263695422300-1662535358503525226-n.jpg" alt="Ranczo u Górala - Zdjęcie 17" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1523,7 +1571,7 @@
           <img src="https://i.ibb.co/RGyWdwvZ/769051423-122105263737422300-4070466212584489893-n.jpg" alt="Ranczo u Górala - Zdjęcie 18" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1532,7 +1580,7 @@
           <img src="https://i.ibb.co/CpxQ5fDc/768987810-122105263791422300-5252966808147699288-n.jpg" alt="Ranczo u Górala - Zdjęcie 19" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1541,7 +1589,7 @@
           <img src="https://i.ibb.co/Y7jTvzzw/768934009-122105263863422300-7032514248906683156-n.jpg" alt="Ranczo u Górala - Zdjęcie 20" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1550,7 +1598,7 @@
           <img src="https://i.ibb.co/mV8ShvTx/768987800-122105264025422300-673880638483981953-n.jpg" alt="Ranczo u Górala - Zdjęcie 21" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1559,7 +1607,7 @@
           <img src="https://i.ibb.co/20p1fdWV/768987649-122105264079422300-2040456279653554943-n.jpg" alt="Ranczo u Górala - Zdjęcie 22" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1568,7 +1616,7 @@
           <img src="https://i.ibb.co/b5rgrTJB/768932431-122105264259422300-7285984417710324495-n.jpg" alt="Ranczo u Górala - Zdjęcie 23" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1577,7 +1625,7 @@
           <img src="https://i.ibb.co/tWzdqDh/769144572-122105264499422300-7190116169837120251-n.jpg" alt="Ranczo u Górala - Zdjęcie 24" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1586,7 +1634,7 @@
           <img src="https://i.ibb.co/xq6VjYbQ/768987633-122105264631422300-6470620623936886837-n.jpg" alt="Ranczo u Górala - Zdjęcie 25" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1595,7 +1643,7 @@
           <img src="https://i.ibb.co/JRdgkQ3y/769175981-122105264763422300-2292156434830682947-n.jpg" alt="Ranczo u Górala - Zdjęcie 26" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1604,7 +1652,7 @@
           <img src="https://i.ibb.co/RT5MQMbQ/768954375-122105264847422300-5396517139585820027-n.jpg" alt="Ranczo u Górala - Zdjęcie 27" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1613,7 +1661,7 @@
           <img src="https://i.ibb.co/MDdM2vFG/767692006-122105264901422300-407575890316149459-n.jpg" alt="Ranczo u Górala - Zdjęcie 28" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1622,7 +1670,7 @@
           <img src="https://i.ibb.co/20Njb1yd/769003341-122105264949422300-2140424198303345674-n.jpg" alt="Ranczo u Górala - Zdjęcie 29" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1631,7 +1679,7 @@
           <img src="https://i.ibb.co/sddN6Qc4/768963555-122105265063422300-1246561268759233171-n.jpg" alt="Ranczo u Górala - Zdjęcie 30" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1640,7 +1688,7 @@
           <img src="https://i.ibb.co/M5tBLgTf/768934007-122105265243422300-5046750901815795529-n.jpg" alt="Ranczo u Górala - Zdjęcie 31" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1649,7 +1697,7 @@
           <img src="https://i.ibb.co/Cs7f1bH0/769051886-122105265327422300-7092906755035753501-n.jpg" alt="Ranczo u Górala - Zdjęcie 32" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1658,7 +1706,7 @@
           <img src="https://i.ibb.co/tw58Y77g/769051372-122105265423422300-446929550492129310-n.jpg" alt="Ranczo u Górala - Zdjęcie 33" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
           <div class="gallery-overlay">
             <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
         </div>
@@ -1702,7 +1750,7 @@
           </div>
           <h3 class="audience-title">Weekend z przyjaciółmi</h3>
           <p class="audience-desc">
-            Wspólne wieczory w prywatnym jacuzzi, grillowanie na świeżym powietrzu i komfort noclegu dla grupy do 10 osób.
+            Wspólne wieczory w prywatnym jacuzzi, odpoczynek na świeżym powietrzu i komfort noclegu dla grupy do 10 osób.
           </p>
         </div>
         
@@ -1729,18 +1777,18 @@
           </div>
           <h3 class="audience-title">Wypoczynek w ciszy</h3>
           <p class="audience-desc">
-            Brak bezpośredniego miejskiego hałasu, bezpośrednie sąsiedztwo lasu i czyste powietrze sprzyjają pełnemu resetowi i regeneracji sił.
+            Brak miejskiego hałasu, bezpośrednie sąsiedztwo lasu i czyste powietrze sprzyjają pełnemu resetowi i regeneracji sił.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 7. KONTAKT I REZERWACJA (BEZ FORMULARZA - PROSTE, PRZEJRZYSTE KARTY KONTAKTOWE) -->
+  <!-- 7. KONTAKT I REZERWACJA -->
   <section id="kontakt" class="section-padding">
     <div class="container">
       <div class="contact-wrapper">
-        <div class="section-header reveal" style="text-align: center;">
+        <div class="section-header reveal">
           <span class="section-tag" style="color: var(--primary-wood-light);">Rezerwacje i kontakt</span>
           <h2 class="section-title">Zapytaj o wolny termin i szczegóły</h2>
           <p class="section-description" style="color: var(--text-light-muted);">
@@ -1759,8 +1807,8 @@
               </svg>
             </div>
             <div>
-              <h3 class="contact-intro-title">Bezpośrednia rezerwacja telefoniczna i online</h3>
-              <span style="font-size: 0.875rem; color: var(--primary-wood-light);">Szybka informacja o dostępności i wycena</span>
+              <h3 class="contact-intro-title">Bezpośrednia rezerwacja i wycena</h3>
+              <span style="font-size: 0.8125rem; color: var(--primary-wood-light);">Szybka informacja o dostępności w kalendarzu</span>
             </div>
           </div>
           <p class="contact-intro-desc">
@@ -1802,7 +1850,7 @@
               <div>
                 <span class="contact-card-label">WhatsApp</span>
                 <div class="contact-card-value">+48 791 757 553</div>
-                <div class="contact-card-subtext">Wiadomości tekstowe i zapytania o termin</div>
+                <div class="contact-card-subtext">Wiadomości i zapytania o termin</div>
               </div>
             </div>
             <a href="https://wa.me/48791757553" target="_blank" rel="noopener" class="btn btn-outline-wood" id="btn-wa-main" style="width: 100%;">
@@ -1828,7 +1876,7 @@
                 <div class="contact-card-subtext">Malownicza, spokojna okolica tuż przy lesie</div>
               </div>
             </div>
-            <div style="font-size: 0.9375rem; color: var(--text-light-muted); border-top: 1px solid var(--border-dark); padding-top: 14px;">
+            <div style="font-size: 0.875rem; color: var(--text-light-muted); border-top: 1px solid var(--border-dark); padding-top: 12px;">
               Wygodny dojazd całoroczny, prywatny parking na terenie posesji.
             </div>
           </div>
@@ -1844,14 +1892,14 @@
               <div>
                 <span class="contact-card-label">Facebook</span>
                 <div class="contact-card-value">Ranczo u Górala</div>
-                <div class="contact-card-subtext">Bieżące zdjęcia, aktualności i opinie</div>
+                <div class="contact-card-subtext">Zdjęcia, aktualności i opinie gości</div>
               </div>
             </div>
             <a href="https://www.facebook.com/profile.php?id=61592669026220" target="_blank" rel="noopener" class="btn btn-outline-wood" id="btn-fb-main" style="width: 100%;">
               <svg class="icon" viewBox="0 0 24 24">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
               </svg>
-              <span>Odwiedź profil na Facebooku</span>
+              <span>Odwiedź profil Facebook</span>
             </a>
           </div>
         </div>
@@ -1938,7 +1986,7 @@
         });
       }
 
-      // 2. Intersection Observer for Smooth Scroll Reveals
+      // 2. Optimized Intersection Observer for Scroll Reveals
       const revealElements = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {
         const revealObserver = new IntersectionObserver(function(entries, observer) {
@@ -1949,8 +1997,8 @@
             }
           });
         }, {
-          threshold: 0.08,
-          rootMargin: '0px 0px -20px 0px'
+          threshold: 0.05,
+          rootMargin: '0px 0px 50px 0px'
         });
 
         revealElements.forEach(function(el) {
