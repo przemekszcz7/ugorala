@@ -1,0 +1,6 @@
+{
+  "name": "Ranczo u Górala",
+  "description": "Strona domku całorocznego na wynajem Ranczo u Górala w Żarnowej z prywatnym jacuzzi, blisko lasu dla maksymalnie 10 osób.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
