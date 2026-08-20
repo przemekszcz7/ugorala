@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Ranczo u Górala | Domek Całoroczny na Wynajem, Żarnowa</title>
-  <meta name="description" content="Domek całoroczny na wynajem w Żarnowej — blisko lasu, z prywatnym jacuzzi, dla maksymalnie 10 osób. Sprawdź wolne terminy.">
+  <title>Ranczo u Górala | Domek Całoroczny na Wynajem, Żarnowa / Strzyżów</title>
+  <meta name="description" content="Nowy domek całoroczny na wynajem na ponad 1 ha działki w Żarnowej (38-100 Strzyżów). Jacuzzi, 4 sypialnie z łazienkami, do 10 osób (docelowo 18).">
   
   <!-- Open Graph -->
   <meta property="og:title" content="Ranczo u Górala | Domek Całoroczny na Wynajem, Żarnowa">
-  <meta property="og:description" content="Nowo otwarty domek całoroczny w Żarnowej blisko lasu. 4 pokoje z prywatnymi łazienkami, prywatne jacuzzi, do 10 osób.">
+  <meta property="og:description" content="Domek całoroczny na ponad 1 ha działki tuż przy lesie. Prywatne jacuzzi, 4 pokoje z łazienkami, obecnie do 10 osób (docelowo 18). Blisko spływy kajakowe, schron w Stępinie i tunel w Żarnowej.">
   <meta property="og:image" content="https://i.ibb.co/HTs1zLGT/769007941-122105251899422300-67517021702331855-n.jpg">
   <meta property="og:type" content="website">
   
@@ -118,7 +118,7 @@
     /* TYPOGRAPHY HELPERS */
     .section-header {
       text-align: center;
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto 48px auto;
     }
     
@@ -273,7 +273,7 @@
     .nav-links {
       display: none;
       align-items: center;
-      gap: 28px;
+      gap: 24px;
       list-style: none;
     }
     
@@ -358,7 +358,7 @@
     .mobile-menu-links {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 16px;
       list-style: none;
       margin-bottom: 24px;
     }
@@ -398,13 +398,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(180deg, rgba(30, 24, 19, 0.75) 0%, rgba(30, 24, 19, 0.9) 100%);
+      background: linear-gradient(180deg, rgba(30, 24, 19, 0.76) 0%, rgba(30, 24, 19, 0.92) 100%);
     }
     
     .hero-content {
       position: relative;
       z-index: 10;
-      max-width: 840px;
+      max-width: 860px;
       padding: 48px 0;
     }
     
@@ -436,7 +436,7 @@
       color: #e5ded5;
       margin-bottom: 24px;
       line-height: 1.65;
-      max-width: 720px;
+      max-width: 740px;
     }
     
     .hero-features-bar {
@@ -615,7 +615,84 @@
       flex-shrink: 0;
     }
     
-    /* 5. GALERIA (SZYBKA I PŁYNNA NA MOBILE) */
+    /* 5. ATRAKCJE W OKOLICY */
+    #atrakcje {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .attractions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    
+    .attraction-card {
+      background-color: var(--bg-main);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      min-width: 0;
+    }
+    
+    @media (hover: hover) {
+      .attraction-card {
+        transition: var(--transition-smooth);
+      }
+      .attraction-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--primary-wood);
+        box-shadow: var(--shadow-md);
+      }
+    }
+    
+    .attraction-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    
+    .attraction-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background-color: var(--primary-wood-light);
+      color: var(--primary-wood);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .attraction-title {
+      font-size: 1.125rem;
+      color: var(--dark-accent);
+      margin-bottom: 4px;
+    }
+    
+    .attraction-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary-wood);
+      background-color: rgba(138, 106, 69, 0.1);
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+    
+    .attraction-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    
+    /* 6. GALERIA (SZYBKA I PŁYNNA NA MOBILE) */
     #galeria {
       background-color: var(--bg-subtle);
     }
@@ -693,7 +770,7 @@
       }
     }
     
-    /* 6. DLA KOGO */
+    /* 7. DLA KOGO */
     #dla-kogo {
       background-color: var(--bg-main);
     }
@@ -751,7 +828,7 @@
       line-height: 1.6;
     }
     
-    /* 7. KONTAKT I REZERWACJA */
+    /* 8. KONTAKT I REZERWACJA */
     #kontakt {
       background-color: var(--dark-accent);
       color: #ffffff;
@@ -882,7 +959,7 @@
       line-height: 1.45;
     }
     
-    /* 8. STOPKA */
+    /* 9. STOPKA */
     footer {
       background-color: var(--dark-surface);
       color: var(--text-light-muted);
@@ -1039,6 +1116,9 @@
       .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      .attractions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
       .contact-cards-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1059,6 +1139,9 @@
       }
       .amenities-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .attractions-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
       .audience-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1126,6 +1209,7 @@
       <ul class="nav-links" id="main-menu">
         <li><a href="#o-domku">O domku</a></li>
         <li><a href="#udogodnienia">Udogodnienia</a></li>
+        <li><a href="#atrakcje">Atrakcje</a></li>
         <li><a href="#galeria">Galeria</a></li>
         <li><a href="#dla-kogo">Dla kogo</a></li>
         <li><a href="#kontakt">Kontakt i Rezerwacja</a></li>
@@ -1152,6 +1236,7 @@
       <ul class="mobile-menu-links">
         <li><a href="#o-domku" class="mobile-link">O domku</a></li>
         <li><a href="#udogodnienia" class="mobile-link">Udogodnienia</a></li>
+        <li><a href="#atrakcje" class="mobile-link">Atrakcje w okolicy</a></li>
         <li><a href="#galeria" class="mobile-link">Galeria</a></li>
         <li><a href="#dla-kogo" class="mobile-link">Dla kogo</a></li>
         <li><a href="#kontakt" class="mobile-link">Kontakt i Rezerwacja</a></li>
@@ -1178,13 +1263,13 @@
             <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
             <circle cx="12" cy="10" r="3"/>
           </svg>
-          <span>Żarnowa 285 &bull; Obiekt całoroczny</span>
+          <span>Żarnowa 285, 38-100 Strzyżów &bull; woj. podkarpackie</span>
         </div>
         
-        <h1 class="hero-title">Domek całoroczny blisko lasu &mdash; cisza, natura i prywatne jacuzzi</h1>
+        <h1 class="hero-title">Domek całoroczny na ponad 1 ha działki &mdash; cisza, las i prywatne jacuzzi</h1>
         
         <p class="hero-subtitle">
-          Kameralny, komfortowy domek wykończony drewnem dla maksymalnie 10 osób. 4 niezależne pokoje z prywatnymi łazienkami, przestronny ogród i pełna prywatność w otoczeniu leśnej natury.
+          Kameralny, komfortowy obiekt wykończony drewnem. Obecnie do dyspozycji 10 miejsc noclegowych (docelowo do 18 osób). 4 niezależne sypialnie z prywatnymi łazienkami, ogromna 1-hektarowa przestrzeń i pełna prywatność.
         </p>
         
         <div class="hero-features-bar">
@@ -1195,17 +1280,14 @@
               <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
               <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
-            <span>Do 10 osób</span>
+            <span>Obecnie do 10 osób (docelowo 18)</span>
           </div>
           <span class="hero-divider">&bull;</span>
           <div class="hero-feature-item">
             <svg class="icon" viewBox="0 0 24 24">
-              <path d="M2 4v16"/>
-              <path d="M2 8h18a2 2 0 0 1 2 2v10"/>
-              <path d="M2 17h20"/>
-              <path d="M6 8v9"/>
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
-            <span>4 pokoje z łazienkami</span>
+            <span>Ponad 1 ha prywatnej działki</span>
           </div>
           <span class="hero-divider">&bull;</span>
           <div class="hero-feature-item">
@@ -1218,11 +1300,12 @@
           <span class="hero-divider">&bull;</span>
           <div class="hero-feature-item">
             <svg class="icon" viewBox="0 0 24 24">
-              <path d="M12 2 8 8h8l-4-6z"/>
-              <path d="M12 7 6 15h12l-6-8z"/>
-              <path d="M10 15v7h4v-7"/>
+              <path d="M2 4v16"/>
+              <path d="M2 8h18a2 2 0 0 1 2 2v10"/>
+              <path d="M2 17h20"/>
+              <path d="M6 8v9"/>
             </svg>
-            <span>Tuż przy lesie</span>
+            <span>4 pokoje z łazienkami</span>
           </div>
         </div>
         
@@ -1234,8 +1317,8 @@
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
-          <a href="#udogodnienia" class="btn btn-secondary" id="hero-cta-amenities">
-            <span>Zobacz udogodnienia</span>
+          <a href="#atrakcje" class="btn btn-secondary" id="hero-cta-amenities">
+            <span>Atrakcje w okolicy</span>
           </a>
         </div>
       </div>
@@ -1256,8 +1339,35 @@
             </svg>
           </div>
           <div>
-            <div class="trust-text-title">Dla 10 osób</div>
-            <div class="trust-text-desc">Przestrzeń dla rodziny lub grupy</div>
+            <div class="trust-text-title">Do 10 osób (docelowo 18)</div>
+            <div class="trust-text-desc">Komfort dla rodzin i grup</div>
+          </div>
+        </div>
+        
+        <div class="trust-card reveal">
+          <div class="trust-icon-box">
+            <svg class="icon icon-lg" viewBox="0 0 24 24">
+              <path d="M12 2 8 8h8l-4-6z"/>
+              <path d="M12 7 6 15h12l-6-8z"/>
+              <path d="M10 15v7h4v-7"/>
+            </svg>
+          </div>
+          <div>
+            <div class="trust-text-title">> 1 ha zielonej działki</div>
+            <div class="trust-text-desc">Bezpośrednie sąsiedztwo lasu</div>
+          </div>
+        </div>
+        
+        <div class="trust-card reveal">
+          <div class="trust-icon-box">
+            <svg class="icon icon-lg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 12a4 4 0 0 1 8 0"/>
+            </svg>
+          </div>
+          <div>
+            <div class="trust-text-title">Prywatne Jacuzzi</div>
+            <div class="trust-text-desc">Gorąca kąpiel o każdej porze roku</div>
           </div>
         </div>
         
@@ -1275,33 +1385,6 @@
             <div class="trust-text-desc">Każdy z prywatną łazienką</div>
           </div>
         </div>
-        
-        <div class="trust-card reveal">
-          <div class="trust-icon-box">
-            <svg class="icon icon-lg" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M8 12a4 4 0 0 1 8 0"/>
-            </svg>
-          </div>
-          <div>
-            <div class="trust-text-title">Prywatne Jacuzzi</div>
-            <div class="trust-text-desc">Relaks w gorącej wodzie</div>
-          </div>
-        </div>
-        
-        <div class="trust-card reveal">
-          <div class="trust-icon-box">
-            <svg class="icon icon-lg" viewBox="0 0 24 24">
-              <path d="M12 2 8 8h8l-4-6z"/>
-              <path d="M12 7 6 15h12l-6-8z"/>
-              <path d="M10 15v7h4v-7"/>
-            </svg>
-          </div>
-          <div>
-            <div class="trust-text-title">Bliskość Natury</div>
-            <div class="trust-text-desc">Działka przy ścianie lasu</div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1312,15 +1395,15 @@
       <div class="about-grid">
         <div class="about-content reveal">
           <span class="section-tag" id="udogodnienia">O naszym obiekcie</span>
-          <h2 class="about-content-title">Nowy standard kameralnego wypoczynku w Żarnowej</h2>
+          <h2 class="about-content-title">Nowy standard wypoczynku na Podkarpaciu</h2>
           <p class="about-paragraph">
-            Ranczo u Górala to nowo otwarty, całoroczny domek położony w malowniczej, cichej okolicy bezpośrednio przy lesie. To miejsce stworzone z myślą o osobach poszukujących autentycznego wytchnienia od miejskiego zgiełku.
+            Ranczo u Górala to nowo otwarty, całoroczny domek położony w Żarnowej (gmina Strzyżów, woj. podkarpackie) na rozległej działce o powierzchni <strong>ponad 1 hektara</strong>, bezpośrednio przy ścianie lasu.
           </p>
           <p class="about-paragraph">
-            Ciepłe, starannie wykończone naturalnym drewnem wnętrza tworzą przytulną atmosferę. Do dyspozycji gości oddajemy 4 niezależne, komfortowe sypialnie — każda posiada własną, nowoczesną łazienkę, co zapewnia pełną wygodę i prywatność wszystkim mieszkańcom.
+            Na ten moment obiekt oferuje komfortowe warunki dla <strong>maksymalnie 10 osób</strong> z perspektywą rozszerzenia <strong>docelowo do 18 gości</strong>. Wnętrze wykończone naturalnym drewnem mieści 4 niezależne sypialnie, z których każda posiada własną, nowoczesną łazienkę.
           </p>
           <p class="about-paragraph">
-            Na zewnątrz czeka na Państwa rozległy, ogrodzony zielony teren oraz prywatne jacuzzi, idealne na wieczorny relaks o każdej porze roku.
+            Do Państwa wyłącznej dyspozycji oddajemy prywatne jacuzzi zewnętrzne, w pełni wyposażoną kuchnię oraz nieograniczoną przestrzeń zieloną na ognisko, gry plenerowe i relaks na łonie natury.
           </p>
           
           <div class="amenities-grid">
@@ -1329,7 +1412,7 @@
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                 <circle cx="12" cy="7" r="4"/>
               </svg>
-              <span>4 komfortowe pokoje</span>
+              <span>4 sypialnie (na 10 osób, docelowo 18)</span>
             </div>
             
             <div class="amenity-item">
@@ -1337,7 +1420,7 @@
                 <path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-2.12 0l-.88.88a1.5 1.5 0 0 0 0 2.12L6 9"/>
                 <path d="m9 6 11 11a2 2 0 0 1-2.83 2.83L6.17 8.83"/>
               </svg>
-              <span>Osobne łazienki w każdym pokoju</span>
+              <span>Prywatna łazienka w każdym pokoju</span>
             </div>
             
             <div class="amenity-item">
@@ -1345,7 +1428,14 @@
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M8 12a4 4 0 0 1 8 0"/>
               </svg>
-              <span>Prywatne jacuzzi na wyłączność</span>
+              <span>Prywatne jacuzzi całoroczne</span>
+            </div>
+            
+            <div class="amenity-item">
+              <svg class="icon amenity-icon" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <span>Ponad 1 hektar prywatnej działki</span>
             </div>
             
             <div class="amenity-item">
@@ -1354,7 +1444,7 @@
                 <path d="M12 7 6 15h12l-6-8z"/>
                 <path d="M10 15v7h4v-7"/>
               </svg>
-              <span>Spokojna okolica blisko lasu</span>
+              <span>Działka tuż przy ścianie lasu</span>
             </div>
             
             <div class="amenity-item">
@@ -1370,14 +1460,7 @@
               <svg class="icon amenity-icon" viewBox="0 0 24 24">
                 <path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5-5-5 5M12 4v12"/>
               </svg>
-              <span>Wnętrze wykończone drewnem</span>
-            </div>
-            
-            <div class="amenity-item">
-              <svg class="icon amenity-icon" viewBox="0 0 24 24">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-              <span>Duży, bezpieczny zielony teren</span>
+              <span>Przytulne wykończenie drewnem</span>
             </div>
             
             <div class="amenity-item">
@@ -1385,7 +1468,7 @@
                 <rect x="2" y="7" width="20" height="14" rx="2"/>
                 <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
               </svg>
-              <span>Ogrzewanie całoroczne</span>
+              <span>Całoroczne ogrzewanie i komfort</span>
             </div>
           </div>
         </div>
@@ -1393,335 +1476,173 @@
         <div class="about-image-wrapper reveal">
           <img src="https://i.ibb.co/3mCsjLSH/769032935-122105262255422300-283267619270869382-n.jpg" alt="Ranczo u Górala - Wnętrze domku" class="about-image-main" decoding="async" width="600" height="440">
           <div class="about-badge">
-            <span class="about-badge-number">100%</span>
-            <span class="about-badge-label">Prywatności na wyłączność</span>
+            <span class="about-badge-number">> 1 ha</span>
+            <span class="about-badge-label">Prywatnego terenu na wyłączność</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. GALERIA (SZYBKA, LEKKA I PŁYNNA) -->
+  <!-- 5. ATRAKCJE W OKOLICY -->
+  <section id="atrakcje" class="section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Co warto zobaczyć i robić</span>
+        <h2 class="section-title">Bardzo blisko do wspaniałych atrakcji</h2>
+        <p class="section-description">
+          Lokalizacja w Żarnowej to doskonała baza wypadowa do aktywnego spędzania czasu, odkrywania niezwykłej historii regionu i delektowania się lokalną kuchnią.
+        </p>
+      </div>
+      
+      <div class="attractions-grid">
+        <div class="attraction-card reveal">
+          <div class="attraction-top">
+            <div class="attraction-icon-box">
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <path d="M2 12h20"/>
+                <path d="M20 12c-4 5-12 5-16 0"/>
+                <path d="M7 10l5-6 5 6"/>
+              </svg>
+            </div>
+            <div>
+              <span class="attraction-tag">Aktywny wypoczynek</span>
+              <h3 class="attraction-title">Spływy kajakowe</h3>
+            </div>
+          </div>
+          <p class="attraction-desc">
+            Malownicze trasy kajakowe po rzece Wisłok i okolicznych akwenach. Wspaniała przygoda na wodzie zarówno dla początkujących, jak i zaprawionych kajakarzy.
+          </p>
+        </div>
+        
+        <div class="attraction-card reveal">
+          <div class="attraction-top">
+            <div class="attraction-icon-box">
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                <line x1="9" y1="9" x2="9.01" y2="9"/>
+                <line x1="15" y1="9" x2="15.01" y2="9"/>
+              </svg>
+            </div>
+            <div>
+              <span class="attraction-tag">Rekreacja i pasja</span>
+              <h3 class="attraction-title">Stadniny koni</h3>
+            </div>
+          </div>
+          <p class="attraction-desc">
+            Ośrodki jeździeckie i stadniny w bezpośredniej okolicy. Możliwość nauki jazdy konnej, przejażdżek w terenie oraz kontaktu ze zwierzętami pośród podkarpackiej natury.
+          </p>
+        </div>
+        
+        <div class="attraction-card reveal">
+          <div class="attraction-top">
+            <div class="attraction-icon-box">
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                <line x1="6" y1="1" x2="6" y2="4"/>
+                <line x1="10" y1="1" x2="10" y2="4"/>
+                <line x1="14" y1="1" x2="14" y2="4"/>
+              </svg>
+            </div>
+            <div>
+              <span class="attraction-tag">Gastronomia</span>
+              <h3 class="attraction-title">Lokalne restauracje</h3>
+            </div>
+          </div>
+          <p class="attraction-desc">
+            Wyśmienita kuchnia regionalna, tradycyjne podkarpackie smaki oraz sprawdzone restauracje w Żarnowej i Strzyżowie z opcją zamówień na wynos.
+          </p>
+        </div>
+        
+        <div class="attraction-card reveal">
+          <div class="attraction-top">
+            <div class="attraction-icon-box">
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <rect x="2" y="6" width="20" height="12" rx="2"/>
+                <path d="M6 12h.01M10 12h.01M14 12h.01M18 12h.01"/>
+              </svg>
+            </div>
+            <div>
+              <span class="attraction-tag">Unikat w Europie</span>
+              <h3 class="attraction-title">Schron kolejowy w Stępinie</h3>
+            </div>
+          </div>
+          <p class="attraction-desc">
+            Największy naziemny żelbetowy schron kolejowy w Europie (Stępina-Cieszyna). Monumentalny kompleks fortyfikacji wojennych o długości niemal 400 metrów z bogatą ekspozycją historyczną.
+          </p>
+        </div>
+        
+        <div class="attraction-card reveal">
+          <div class="attraction-top">
+            <div class="attraction-icon-box">
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <path d="M4 19h16"/>
+                <path d="M4 15h16"/>
+                <path d="M4 11h16"/>
+                <path d="M4 7h16"/>
+                <path d="M8 4v16"/>
+                <path d="M16 4v16"/>
+              </svg>
+            </div>
+            <div>
+              <span class="attraction-tag">Tuż obok w Żarnowej</span>
+              <h3 class="attraction-title">Tunel w Żarnowej</h3>
+            </div>
+          </div>
+          <p class="attraction-desc">
+            Zabytkowy schron tunelowy i podziemny tunel kolejowy z czasów II wojny światowej zlokalizowany w Żarnowej &mdash; fascynujący obiekt architektoniczny dostępny w sąsiedztwie.
+          </p>
+        </div>
+        
+        <div class="attraction-card reveal">
+          <div class="attraction-top">
+            <div class="attraction-icon-box">
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <path d="M12 2 8 8h8l-4-6z"/>
+                <path d="M12 7 6 15h12l-6-8z"/>
+                <path d="M10 15v7h4v-7"/>
+              </svg>
+            </div>
+            <div>
+              <span class="attraction-tag">Spokój i relaks</span>
+              <h3 class="attraction-title">Szlaki leśne i piesze</h3>
+            </div>
+          </div>
+          <p class="attraction-desc">
+            Bezpośrednie wejście do lasu z terenu działki, liczne ścieżki spacerowe i trasy rowerowe Pogórza Strzyżowskiego z czystym leśnym powietrzem.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. GALERIA -->
   <section id="galeria" class="section-padding">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Fotogaleria</span>
-        <h2 class="section-title">Galeria obiektu i otoczenia</h2>
+        <h2 class="section-title">Galeria obiektu, wnętrz i ogrodu</h2>
         <p class="section-description">
-          Zobacz wnętrza, wyposażenie sypialni i łazienek, strefę wypoczynku oraz otoczenie Rancza u Górala. Kliknij dowolne zdjęcie, aby powiększyć.
+          Obejrzyj pełną galerię zdjęć Rancza u Górala (41 zdjęć). Kliknij dowolną fotografię, aby otworzyć wygodny pełnoekranowy podgląd.
         </p>
       </div>
       
       <div class="gallery-grid" id="gallery-container">
-        <!-- 33 Gallery Cards -->
-        <div class="gallery-card reveal" data-index="0">
-          <img src="https://i.ibb.co/3mCsjLSH/769032935-122105262255422300-283267619270869382-n.jpg" alt="Ranczo u Górala - Zdjęcie 1" class="gallery-img" decoding="async" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-        
-        <div class="gallery-card reveal" data-index="1">
-          <img src="https://i.ibb.co/xtv5d0zh/768963568-122105262339422300-6561241769418835323-n.jpg" alt="Ranczo u Górala - Zdjęcie 2" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="2">
-          <img src="https://i.ibb.co/67hjt3HB/769051422-122105262399422300-17403440766073956-n.jpg" alt="Ranczo u Górala - Zdjęcie 3" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="3">
-          <img src="https://i.ibb.co/wZSw2Z7H/768963132-122105262585422300-7005273041075571276-n.jpg" alt="Ranczo u Górala - Zdjęcie 4" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="4">
-          <img src="https://i.ibb.co/HL4hGj3v/768963070-122105262663422300-4586021262434033466-n.jpg" alt="Ranczo u Górala - Zdjęcie 5" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="5">
-          <img src="https://i.ibb.co/0v0J5Lz/768992378-122105262753422300-1207525654136729075-n.jpg" alt="Ranczo u Górala - Zdjęcie 6" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="6">
-          <img src="https://i.ibb.co/3qz8qSC/769051842-122105262843422300-8340312587898734795-n.jpg" alt="Ranczo u Górala - Zdjęcie 7" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="7">
-          <img src="https://i.ibb.co/HDVqwhYC/768987794-122105262981422300-4027080823806270436-n.jpg" alt="Ranczo u Górala - Zdjęcie 8" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="8">
-          <img src="https://i.ibb.co/yc6vLC3F/769007333-122105263065422300-137344023645452630-n.jpg" alt="Ranczo u Górala - Zdjęcie 9" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="9">
-          <img src="https://i.ibb.co/m5ZGM9CH/768941455-122105263173422300-6022859613526721767-n.jpg" alt="Ranczo u Górala - Zdjęcie 10" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="10">
-          <img src="https://i.ibb.co/PsGTGfNw/768987800-122105263245422300-6305828592665623187-n.jpg" alt="Ranczo u Górala - Zdjęcie 11" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="11">
-          <img src="https://i.ibb.co/1JtWRy87/768992384-122105263371422300-4856415714265361896-n.jpg" alt="Ranczo u Górala - Zdjęcie 12" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="12">
-          <img src="https://i.ibb.co/4RQ5X8Bw/768976251-122105263431422300-1743003416655206308-n.jpg" alt="Ranczo u Górala - Zdjęcie 13" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="13">
-          <img src="https://i.ibb.co/YByNNDXB/767872387-122105263491422300-2497388772083126420-n.jpg" alt="Ranczo u Górala - Zdjęcie 14" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="14">
-          <img src="https://i.ibb.co/99RCD85k/769182866-122105263581422300-6495423246210253138-n.jpg" alt="Ranczo u Górala - Zdjęcie 15" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="15">
-          <img src="https://i.ibb.co/4wV0v4H0/769032898-122105263635422300-3192891482482475117-n.jpg" alt="Ranczo u Górala - Zdjęcie 16" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="16">
-          <img src="https://i.ibb.co/WWfTzX4p/768967709-122105263695422300-1662535358503525226-n.jpg" alt="Ranczo u Górala - Zdjęcie 17" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="17">
-          <img src="https://i.ibb.co/RGyWdwvZ/769051423-122105263737422300-4070466212584489893-n.jpg" alt="Ranczo u Górala - Zdjęcie 18" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="18">
-          <img src="https://i.ibb.co/CpxQ5fDc/768987810-122105263791422300-5252966808147699288-n.jpg" alt="Ranczo u Górala - Zdjęcie 19" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="19">
-          <img src="https://i.ibb.co/Y7jTvzzw/768934009-122105263863422300-7032514248906683156-n.jpg" alt="Ranczo u Górala - Zdjęcie 20" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="20">
-          <img src="https://i.ibb.co/mV8ShvTx/768987800-122105264025422300-673880638483981953-n.jpg" alt="Ranczo u Górala - Zdjęcie 21" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="21">
-          <img src="https://i.ibb.co/20p1fdWV/768987649-122105264079422300-2040456279653554943-n.jpg" alt="Ranczo u Górala - Zdjęcie 22" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="22">
-          <img src="https://i.ibb.co/b5rgrTJB/768932431-122105264259422300-7285984417710324495-n.jpg" alt="Ranczo u Górala - Zdjęcie 23" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="23">
-          <img src="https://i.ibb.co/tWzdqDh/769144572-122105264499422300-7190116169837120251-n.jpg" alt="Ranczo u Górala - Zdjęcie 24" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="24">
-          <img src="https://i.ibb.co/xq6VjYbQ/768987633-122105264631422300-6470620623936886837-n.jpg" alt="Ranczo u Górala - Zdjęcie 25" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="25">
-          <img src="https://i.ibb.co/JRdgkQ3y/769175981-122105264763422300-2292156434830682947-n.jpg" alt="Ranczo u Górala - Zdjęcie 26" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="26">
-          <img src="https://i.ibb.co/RT5MQMbQ/768954375-122105264847422300-5396517139585820027-n.jpg" alt="Ranczo u Górala - Zdjęcie 27" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="27">
-          <img src="https://i.ibb.co/MDdM2vFG/767692006-122105264901422300-407575890316149459-n.jpg" alt="Ranczo u Górala - Zdjęcie 28" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="28">
-          <img src="https://i.ibb.co/20Njb1yd/769003341-122105264949422300-2140424198303345674-n.jpg" alt="Ranczo u Górala - Zdjęcie 29" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="29">
-          <img src="https://i.ibb.co/sddN6Qc4/768963555-122105265063422300-1246561268759233171-n.jpg" alt="Ranczo u Górala - Zdjęcie 30" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="30">
-          <img src="https://i.ibb.co/M5tBLgTf/768934007-122105265243422300-5046750901815795529-n.jpg" alt="Ranczo u Górala - Zdjęcie 31" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="31">
-          <img src="https://i.ibb.co/Cs7f1bH0/769051886-122105265327422300-7092906755035753501-n.jpg" alt="Ranczo u Górala - Zdjęcie 32" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-card reveal" data-index="32">
-          <img src="https://i.ibb.co/tw58Y77g/769051372-122105265423422300-446929550492129310-n.jpg" alt="Ranczo u Górala - Zdjęcie 33" loading="lazy" decoding="async" class="gallery-img" width="600" height="450">
-          <div class="gallery-overlay">
-            <div class="gallery-zoom-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-          </div>
-        </div>
+        <!-- Renderowane przez JS dla maksymalnej wydajności i szybkości ładowania -->
       </div>
     </div>
   </section>
 
-  <!-- 6. DLA KOGO -->
+  <!-- 7. DLA KOGO -->
   <section id="dla-kogo" class="section-padding">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Dopasowane do Twoich potrzeb</span>
         <h2 class="section-title">Dla kogo stworzyliśmy to miejsce?</h2>
         <p class="section-description">
-          Układ domku i otoczenie sprzyjają różnym formom wypoczynku — od rodzinnych wyjazdów po spokojne spotkania w gronie przyjaciół.
+          Układ domku i ponad 1 ha prywatnego terenu sprzyjają różnym formom wypoczynku — od rodzinnych wyjazdów po spotkania w gronie przyjaciół.
         </p>
       </div>
       
@@ -1735,7 +1656,7 @@
           </div>
           <h3 class="audience-title">Rodzinny wyjazd</h3>
           <p class="audience-desc">
-            Bezpieczny, przestronny ogród, w pełni wyposażona kuchnia i niezależne sypialnie z łazienkami gwarantują komfort dla kilku pokoleń rodziny.
+            Bezpieczny, 1-hektarowy zielony ogród, w pełni wyposażona kuchnia i sypialnie z osobnymi łazienkami gwarantują komfort dla kilku pokoleń rodziny.
           </p>
         </div>
         
@@ -1750,7 +1671,7 @@
           </div>
           <h3 class="audience-title">Weekend z przyjaciółmi</h3>
           <p class="audience-desc">
-            Wspólne wieczory w prywatnym jacuzzi, odpoczynek na świeżym powietrzu i komfort noclegu dla grupy do 10 osób.
+            Wspólne wieczory w gorącym jacuzzi, ognisko w ogrodzie i komfortowy nocleg dla grup (obecnie do 10 osób, docelowo do 18).
           </p>
         </div>
         
@@ -1761,7 +1682,7 @@
               <polyline points="12 6 12 12 16 14"/>
             </svg>
           </div>
-          <h3 class="audience-title">Dłuższy wypoczynek</h3>
+          <h3 class="audience-title">Dłuższy urlop</h3>
           <p class="audience-desc">
             Kompleksowe wyposażenie domku umożliwia wygodny pobyt na tydzień, dwa lub więcej w standardzie prywatnej rezydencji całorocznej.
           </p>
@@ -1784,7 +1705,7 @@
     </div>
   </section>
 
-  <!-- 7. KONTAKT I REZERWACJA -->
+  <!-- 8. KONTAKT I REZERWACJA -->
   <section id="kontakt" class="section-padding">
     <div class="container">
       <div class="contact-wrapper">
@@ -1812,7 +1733,7 @@
             </div>
           </div>
           <p class="contact-intro-desc">
-            Preferujemy bezpośredni kontakt — dzięki temu od razu sprawdzimy dla Państwa dostępność w kalendarzu, odpowiemy na dodatkowe pytania dotyczące udogodnień oraz przygotujemy domek zgodnie z Państwa życzeniami.
+            Preferujemy bezpośredni kontakt — od razu sprawdzimy dla Państwa dostępność terminów w kalendarzu, odpowiemy na wszelkie pytania i dopasujemy szczegóły pobytu.
           </p>
         </div>
         
@@ -1873,11 +1794,11 @@
               <div>
                 <span class="contact-card-label">Adres obiektu</span>
                 <div class="contact-card-value">Żarnowa 285</div>
-                <div class="contact-card-subtext">Malownicza, spokojna okolica tuż przy lesie</div>
+                <div class="contact-card-subtext">38-100 Strzyżów, woj. podkarpackie</div>
               </div>
             </div>
             <div style="font-size: 0.875rem; color: var(--text-light-muted); border-top: 1px solid var(--border-dark); padding-top: 12px;">
-              Wygodny dojazd całoroczny, prywatny parking na terenie posesji.
+              Ponad 1 ha prywatnego terenu przy lesie, wygodny dojazd całoroczny.
             </div>
           </div>
           
@@ -1892,7 +1813,7 @@
               <div>
                 <span class="contact-card-label">Facebook</span>
                 <div class="contact-card-value">Ranczo u Górala</div>
-                <div class="contact-card-subtext">Zdjęcia, aktualności i opinie gości</div>
+                <div class="contact-card-subtext">Zdjęcia, aktualności i relacje</div>
               </div>
             </div>
             <a href="https://www.facebook.com/profile.php?id=61592669026220" target="_blank" rel="noopener" class="btn btn-outline-wood" id="btn-fb-main" style="width: 100%;">
@@ -1907,14 +1828,14 @@
     </div>
   </section>
 
-  <!-- 8. STOPKA -->
+  <!-- 9. STOPKA -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand-title">Ranczo u Górala</div>
           <p class="footer-desc">
-            Nowo otwarty, całoroczny domek na wynajem w Żarnowej. Prywatne jacuzzi, 4 pokoje z osobnymi łazienkami, bliskość natury i lasu dla maksymalnie 10 osób.
+            Nowo otwarty, całoroczny domek na wynajem w Żarnowej (38-100 Strzyżów). Ponad 1 ha działki przy lesie, prywatne jacuzzi, 4 sypialnie z osobnymi łazienkami.
           </p>
         </div>
         
@@ -1923,6 +1844,7 @@
           <ul class="footer-links">
             <li><a href="#o-domku">O obiekcie</a></li>
             <li><a href="#udogodnienia">Udogodnienia</a></li>
+            <li><a href="#atrakcje">Atrakcje w okolicy</a></li>
             <li><a href="#galeria">Galeria zdjęć</a></li>
             <li><a href="#dla-kogo">Dla kogo</a></li>
             <li><a href="#kontakt">Rezerwacje</a></li>
@@ -1932,7 +1854,8 @@
         <div>
           <div class="footer-heading">Dane obiektu</div>
           <ul class="footer-links">
-            <li>Żarnowa 285</li>
+            <li>Żarnowa 285, 38-100 Strzyżów</li>
+            <li>Województwo podkarpackie</li>
             <li>Tel: <a href="tel:791757553">791 757 553</a></li>
             <li>WhatsApp: <a href="https://wa.me/48791757553" target="_blank" rel="noopener">+48 791 757 553</a></li>
             <li><a href="https://www.facebook.com/profile.php?id=61592669026220" target="_blank" rel="noopener">Facebook: Ranczo u Górala</a></li>
@@ -1942,7 +1865,7 @@
       
       <div class="footer-bottom">
         <div>&copy; 2026 Ranczo u Górala. Wszelkie prawa zastrzeżone.</div>
-        <div>Domek całoroczny na wynajem &bull; Żarnowa 285</div>
+        <div>Domek całoroczny na wynajem &bull; Żarnowa 285, 38-100 Strzyżów</div>
       </div>
     </div>
   </footer>
@@ -1957,14 +1880,14 @@
     </button>
     <div class="lightbox-content">
       <img src="" alt="Powiększone zdjęcie - Ranczo u Górala" class="lightbox-image" id="lightbox-img" decoding="async">
-      <div class="lightbox-counter" id="lightbox-counter">1 / 33</div>
+      <div class="lightbox-counter" id="lightbox-counter">1 / 41</div>
     </div>
     <button class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Następne zdjęcie">
       <svg class="icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
   </div>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- JAVASCRIPT LOGIC & GALLERY DATA -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // 1. Mobile Hamburger Menu
@@ -1986,7 +1909,77 @@
         });
       }
 
-      // 2. Optimized Intersection Observer for Scroll Reveals
+      // 2. All 41 Gallery Images
+      const galleryImages = [
+        "https://i.ibb.co/3mCsjLSH/769032935-122105262255422300-283267619270869382-n.jpg",
+        "https://i.ibb.co/xtv5d0zh/768963568-122105262339422300-6561241769418835323-n.jpg",
+        "https://i.ibb.co/67hjt3HB/769051422-122105262399422300-17403440766073956-n.jpg",
+        "https://i.ibb.co/wZSw2Z7H/768963132-122105262585422300-7005273041075571276-n.jpg",
+        "https://i.ibb.co/HL4hGj3v/768963070-122105262663422300-4586021262434033466-n.jpg",
+        "https://i.ibb.co/0v0J5Lz/768992378-122105262753422300-1207525654136729075-n.jpg",
+        "https://i.ibb.co/3qz8qSC/769051842-122105262843422300-8340312587898734795-n.jpg",
+        "https://i.ibb.co/HDVqwhYC/768987794-122105262981422300-4027080823806270436-n.jpg",
+        "https://i.ibb.co/yc6vLC3F/769007333-122105263065422300-137344023645452630-n.jpg",
+        "https://i.ibb.co/m5ZGM9CH/768941455-122105263173422300-6022859613526721767-n.jpg",
+        "https://i.ibb.co/PsGTGfNw/768987800-122105263245422300-6305828592665623187-n.jpg",
+        "https://i.ibb.co/1JtWRy87/768992384-122105263371422300-4856415714265361896-n.jpg",
+        "https://i.ibb.co/4RQ5X8Bw/768976251-122105263431422300-1743003416655206308-n.jpg",
+        "https://i.ibb.co/YByNNDXB/767872387-122105263491422300-2497388772083126420-n.jpg",
+        "https://i.ibb.co/99RCD85k/769182866-122105263581422300-6495423246210253138-n.jpg",
+        "https://i.ibb.co/4wV0v4H0/769032898-122105263635422300-3192891482482475117-n.jpg",
+        "https://i.ibb.co/WWfTzX4p/768967709-122105263695422300-1662535358503525226-n.jpg",
+        "https://i.ibb.co/RGyWdwvZ/769051423-122105263737422300-4070466212584489893-n.jpg",
+        "https://i.ibb.co/CpxQ5fDc/768987810-122105263791422300-5252966808147699288-n.jpg",
+        "https://i.ibb.co/Y7jTvzzw/768934009-122105263863422300-7032514248906683156-n.jpg",
+        "https://i.ibb.co/mV8ShvTx/768987800-122105264025422300-673880638483981953-n.jpg",
+        "https://i.ibb.co/20p1fdWV/768987649-122105264079422300-2040456279653554943-n.jpg",
+        "https://i.ibb.co/b5rgrTJB/768932431-122105264259422300-7285984417710324495-n.jpg",
+        "https://i.ibb.co/tWzdqDh/769144572-122105264499422300-7190116169837120251-n.jpg",
+        "https://i.ibb.co/xq6VjYbQ/768987633-122105264631422300-6470620623936886837-n.jpg",
+        "https://i.ibb.co/JRdgkQ3y/769175981-122105264763422300-2292156434830682947-n.jpg",
+        "https://i.ibb.co/RT5MQMbQ/768954375-122105264847422300-5396517139585820027-n.jpg",
+        "https://i.ibb.co/MDdM2vFG/767692006-122105264901422300-407575890316149459-n.jpg",
+        "https://i.ibb.co/20Njb1yd/769003341-122105264949422300-2140424198303345674-n.jpg",
+        "https://i.ibb.co/sddN6Qc4/768963555-122105265063422300-1246561268759233171-n.jpg",
+        "https://i.ibb.co/M5tBLgTf/768934007-122105265243422300-5046750901815795529-n.jpg",
+        "https://i.ibb.co/Cs7f1bH0/769051886-122105265327422300-7092906755035753501-n.jpg",
+        "https://i.ibb.co/tw58Y77g/769051372-122105265423422300-446929550492129310-n.jpg",
+        // Nowe zdjęcia:
+        "https://i.ibb.co/DfwMKchx/779178745-1782842669390696-1193726361815532660-n-1.jpg",
+        "https://i.ibb.co/k29hRKmW/777620663-1979899632711111-2953381021514928501-n-1.jpg",
+        "https://i.ibb.co/FLbtwR2P/775726613-1794744744859983-7378924865781615572-n-1.jpg",
+        "https://i.ibb.co/Z687qKnm/774136388-2130139767906982-1682549324467733248-n-1.jpg",
+        "https://i.ibb.co/cKKrKTbN/777259774-4628496064095715-7305745894415561260-n-1.jpg",
+        "https://i.ibb.co/b541GjKr/774361208-2561150261067430-5826220020406502740-n-1.jpg",
+        "https://i.ibb.co/yFFvcdDK/775543980-1054698533931810-7850543501891667282-n-1.jpg",
+        "https://i.ibb.co/Z1F66T9P/775398419-28596200116632531-1192714154070668805-n-1.jpg"
+      ];
+
+      // Dynamiczne renderowanie galerii z zachowaniem pełnej płynności i lekkiej struktury
+      const galleryContainer = document.getElementById('gallery-container');
+      if (galleryContainer) {
+        const fragment = document.createDocumentFragment();
+        galleryImages.forEach(function(url, idx) {
+          const card = document.createElement('div');
+          card.className = 'gallery-card reveal';
+          card.setAttribute('data-index', idx);
+          card.innerHTML = `
+            <img src="${url}" alt="Ranczo u Górala - Zdjęcie ${idx + 1}" ${idx > 2 ? 'loading="lazy"' : ''} decoding="async" class="gallery-img" width="600" height="450">
+            <div class="gallery-overlay">
+              <div class="gallery-zoom-icon">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </div>
+            </div>
+          `;
+          card.addEventListener('click', function() {
+            openLightbox(idx);
+          });
+          fragment.appendChild(card);
+        });
+        galleryContainer.appendChild(fragment);
+      }
+
+      // 3. Optimized Intersection Observer for Scroll Reveals
       const revealElements = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {
         const revealObserver = new IntersectionObserver(function(entries, observer) {
@@ -2010,8 +2003,7 @@
         });
       }
 
-      // 3. Lightbox Gallery with Preload Optimization
-      const galleryCards = document.querySelectorAll('.gallery-card');
+      // 4. Lightbox Gallery with Preload Optimization
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       const lightboxClose = document.getElementById('lightbox-close');
@@ -2019,33 +2011,28 @@
       const lightboxNext = document.getElementById('lightbox-next');
       const lightboxCounter = document.getElementById('lightbox-counter');
 
-      const imageUrls = Array.from(galleryCards).map(function(card) {
-        const img = card.querySelector('img');
-        return img ? img.getAttribute('src') : '';
-      }).filter(Boolean);
-
       let currentIndex = 0;
 
       function preloadAdjacentImages(idx) {
-        const nextIdx = (idx + 1) % imageUrls.length;
-        const prevIdx = (idx - 1 + imageUrls.length) % imageUrls.length;
-        if (imageUrls[nextIdx]) {
+        const nextIdx = (idx + 1) % galleryImages.length;
+        const prevIdx = (idx - 1 + galleryImages.length) % galleryImages.length;
+        if (galleryImages[nextIdx]) {
           const imgNext = new Image();
-          imgNext.src = imageUrls[nextIdx];
+          imgNext.src = galleryImages[nextIdx];
         }
-        if (imageUrls[prevIdx]) {
+        if (galleryImages[prevIdx]) {
           const imgPrev = new Image();
-          imgPrev.src = imageUrls[prevIdx];
+          imgPrev.src = galleryImages[prevIdx];
         }
       }
 
       function updateLightbox() {
-        if (imageUrls.length === 0) return;
-        if (currentIndex < 0) currentIndex = imageUrls.length - 1;
-        if (currentIndex >= imageUrls.length) currentIndex = 0;
+        if (galleryImages.length === 0) return;
+        if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+        if (currentIndex >= galleryImages.length) currentIndex = 0;
         
-        lightboxImg.src = imageUrls[currentIndex];
-        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + imageUrls.length;
+        lightboxImg.src = galleryImages[currentIndex];
+        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + galleryImages.length;
         preloadAdjacentImages(currentIndex);
       }
 
@@ -2062,12 +2049,6 @@
         lightbox.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
       }
-
-      galleryCards.forEach(function(card, idx) {
-        card.addEventListener('click', function() {
-          openLightbox(idx);
-        });
-      });
 
       if (lightboxClose) {
         lightboxClose.addEventListener('click', closeLightbox);
