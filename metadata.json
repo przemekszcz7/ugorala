@@ -1,6 +1,6 @@
 {
   "name": "Ranczo u Górala",
-  "description": "Strona domku całorocznego na wynajem Ranczo u Górala w Żarnowej z prywatnym jacuzzi, blisko lasu dla maksymalnie 10 osób.",
+  "description": "Domek całoroczny na wynajem w Żarnowej (38-100 Strzyżów, woj. podkarpackie) na ponad 1-hektarowej działce przy lesie z jacuzzi. Obecnie do 10 osób, docelowo do 18.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
