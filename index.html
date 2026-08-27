@@ -21,13 +21,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  
-  <!-- Google Fonts: Cormorant Garamond & Poppins / Inter -->
+  <!-- Google Fonts: Cormorant Garamond & Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <style>
     /* ==========================================================================
-       1. PALETA KOLORÓW I ZMIENNE CSS (JASNY, CIEPŁY, ZACHĘCAJĄCY MOTYW NATURY)
+       1. PALETA KOLORÓW I ZMIENNE CSS
        ========================================================================== */
     :root {
       --bg-primary: #FAF8F5;
@@ -89,20 +88,15 @@
       max-width: 100%;
       height: auto;
       display: block;
-      border-radius: 0; /* ostre krawędzie */
-      /* EFEKT VIBRANT DLA MIEJSCA NA STRONIE */
-      filter: saturate(135%) contrast(108%) brightness(102%);
-      transition: filter 0.3s ease, transform 0.4s ease;
+      border-radius: 0;
     }
     
-    /* Typografia nagłówków */
     h1, h2, h3, h4, .font-heading {
       font-family: 'Cormorant Garamond', Georgia, serif;
       word-break: break-word;
       overflow-wrap: break-word;
     }
     
-    /* Logo */
     .logo {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 28px;
@@ -123,7 +117,6 @@
       stroke-width: 1.75;
     }
     
-    /* Nagłówki sekcji (H2) */
     h2.section-heading {
       font-size: 34px;
       letter-spacing: 1.5px;
@@ -134,7 +127,6 @@
       line-height: 1.25;
     }
     
-    /* Numeracja sekcji (01, 02...) */
     .section-number {
       font-size: 13px;
       color: var(--accent);
@@ -145,7 +137,6 @@
       display: block;
     }
     
-    /* Treść opisowa (paragraf) */
     p.section-desc, .desc-text {
       font-size: 16px;
       line-height: 1.75;
@@ -154,7 +145,6 @@
       margin-bottom: 16px;
     }
     
-    /* Przycisk akcji w stylu "Click Here" */
     .btn-action {
       display: inline-flex;
       align-items: center;
@@ -181,7 +171,6 @@
       transform: translateY(-1px);
     }
     
-    /* Ikony SVG */
     .icon {
       width: 18px;
       height: 18px;
@@ -196,7 +185,6 @@
     /* ==========================================================================
        3. HEADER I NAWIGACJA
        ========================================================================== */
-    /* Top bar (kontakt) */
     .top-bar {
       background: #F3EFEA;
       padding: 10px 60px;
@@ -226,7 +214,6 @@
       gap: 20px;
     }
     
-    /* Główny nav */
     .navbar {
       position: sticky;
       top: 0;
@@ -247,7 +234,6 @@
       list-style: none;
     }
     
-    /* Linki menu */
     .nav-menu a {
       text-transform: uppercase;
       font-size: 13.5px;
@@ -278,7 +264,6 @@
       width: 100%;
     }
     
-    /* CTA button "ZAREZERWUJ TERMIN" */
     .btn-cta {
       background: var(--accent);
       color: #FFFFFF;
@@ -305,7 +290,6 @@
       color: #FFFFFF;
     }
     
-    /* Mobile Toggle */
     .mobile-toggle {
       display: none;
       flex-direction: column;
@@ -336,7 +320,6 @@
       transform: translateY(-9px) rotate(-45deg);
     }
     
-    /* Mobile Nav Dropdown */
     .mobile-nav-panel {
       display: none;
       flex-direction: column;
@@ -384,8 +367,6 @@
       padding: 80px 60px;
       text-align: center;
       border-bottom: 1px solid var(--border-subtle);
-      /* Dodatkowe wyostrzenie i nasycenie dla tła Hero */
-      filter: saturate(130%) contrast(105%);
     }
     
     .hero-container {
@@ -471,7 +452,7 @@
     }
 
     /* ==========================================================================
-       4. SEKCJE TREŚCI (NAPRZEMIENNY GRID, ZIG-ZAG)
+       4. SEKCJE TREŚCI (ZIG-ZAG)
        ========================================================================== */
     .section {
       display: grid;
@@ -481,8 +462,6 @@
       padding: 100px 60px;
       border-bottom: 1px solid var(--border-subtle);
       background: var(--bg-primary);
-      
-      /* 7. Animacje scroll-reveal */
       opacity: 1;
       transform: translateY(0);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -499,7 +478,7 @@
     }
     
     .section:nth-child(even) {
-      direction: rtl; /* odwraca kolejność zdjęcie/tekst */
+      direction: rtl;
       background: var(--bg-tertiary);
     }
     
@@ -512,7 +491,7 @@
       height: auto;
       object-fit: cover;
       display: block;
-      border-radius: 0; /* bez zaokrągleń, ostre krawędzie */
+      border-radius: 0;
       border: 1px solid var(--border-subtle);
       background-color: var(--bg-secondary);
       box-shadow: var(--card-shadow);
@@ -545,7 +524,6 @@
       backdrop-filter: blur(8px);
     }
 
-    /* Udogodnienia lista / tagi w sekcji */
     .amenity-tags {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -572,7 +550,6 @@
       color: var(--accent);
     }
     
-    /* Subgrid dla atrakcji i grup docelowych */
     .cards-subgrid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -621,7 +598,7 @@
     }
 
     /* ==========================================================================
-       SEKCJA GALERII (40 ZDJĘĆ Z OSTREMI KRAWĘDZIAMI)
+       SEKCJA GALERII
        ========================================================================== */
     .gallery-section-wrapper {
       padding: 100px 60px;
@@ -673,12 +650,11 @@
       display: block;
       border-radius: 0;
       opacity: 1;
+      transition: transform 0.4s ease;
     }
     
     .gallery-card:hover .gallery-img {
       transform: scale(1.05);
-      /* Jeszcze żywsze kolory po najechaniu na zdjęcie */
-      filter: saturate(150%) contrast(112%) brightness(105%);
     }
     
     .gallery-overlay {
@@ -793,7 +769,7 @@
     }
 
     /* ==========================================================================
-       6. STOPKA (CIEPŁY ODCIEŃ DREWNA ALPEJSKIEGO Z GÓRNĄ KRAWĘDZIĄ W KSZTAŁCIE FALI)
+       6. STOPKA
        ========================================================================== */
     footer {
       background: #231E19;
@@ -803,7 +779,6 @@
       border-top: 1px solid var(--border-subtle);
     }
     
-    /* Górne wcięcie łukowe / fala */
     .footer-wave {
       position: absolute;
       top: -30px;
@@ -861,7 +836,6 @@
       color: #FFFFFF;
     }
     
-    /* Wyśrodkowany e-mail kontaktowy */
     .footer-email-center {
       text-align: center;
       padding: 60px 0;
@@ -926,8 +900,6 @@
       border-radius: 0;
       object-fit: contain;
       border: 1px solid var(--border-subtle);
-      /* Pełny efekt Vibrant również podczas powiększenia w Lightboxie */
-      filter: saturate(140%) contrast(110%) brightness(102%);
     }
     
     .lightbox-btn {
@@ -1312,7 +1284,7 @@
     </div>
     
     <div class="gallery-grid" id="gallery-container">
-      <!-- Generowane przez lekki skrypt JS dla maksymalnej wydajności -->
+      <!-- Generowane przez lekki skrypt JS -->
     </div>
   </section>
 
@@ -1414,10 +1386,9 @@
   </section>
 
   <!-- ==========================================================================
-       6. STOPKA (CIEMNIEJSZE TŁO Z GÓRNĄ KRAWĘDZIĄ W KSZTAŁCIE FALI/ŁUKU)
+       6. STOPKA
        ========================================================================== -->
   <footer>
-    <!-- Górne wcięcie łukowe / fala SVG -->
     <div class="footer-wave">
       <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M0,0 C300,90 900,90 1200,0 L1200,120 L0,120 Z" fill="#231E19"></path>
@@ -1458,7 +1429,6 @@
         </div>
       </div>
       
-      <!-- Wyśrodkowany e-mail / kontakt w stopce -->
       <div class="footer-email-center">
         <div>Masz pytania dotyczące pobytu lub rezerwacji?</div>
         <div>
@@ -1501,7 +1471,7 @@
   </div>
 
   <!-- ==========================================================================
-       SKRYPTY JAVASCRIPT (CZYSTY, LEKKI KOD)
+       SKRYPTY JAVASCRIPT
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1528,7 +1498,7 @@
         });
       }
 
-      // 2. All 40 Gallery Images
+      // 2. Galeria 40 zdjęć
       const galleryImages = [
         "images/z1.jpg",
         "images/z2.jpg",
@@ -1572,7 +1542,6 @@
         "images/z40.jpg"
       ];
 
-      // Dynamiczne renderowanie galerii z zachowaniem maksymalnej wydajności
       const galleryContainer = document.getElementById('gallery-container');
       if (galleryContainer) {
         const fragment = document.createDocumentFragment();
@@ -1635,7 +1604,6 @@
         lightboxImg.src = galleryImages[currentIndex];
         lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
         
-        // Preload next image
         const nextIdx = (currentIndex + 1) % galleryImages.length;
         const preloadNext = new Image();
         preloadNext.src = galleryImages[nextIdx];
@@ -1670,7 +1638,7 @@
         if (e.key === 'ArrowLeft') prevImage();
       });
 
-      // 5. Scroll-to-top button JS (scrollY > 300px, smooth scroll)
+      // 4. Scroll-to-top button
       const scrollTopBtn = document.getElementById('scrollTopBtn');
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
@@ -1686,7 +1654,7 @@
         });
       }
 
-      // 7. Animacje scroll-reveal (IntersectionObserver, threshold 0.2)
+      // 5. Animacje scroll-reveal
       const revealElements = document.querySelectorAll('.section, .gallery-section-wrapper');
       if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries, obs) => {
