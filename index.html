@@ -1676,79 +1676,75 @@
     });
   </script>
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Ścieżka do Twojego pliku JSON z danymi z Decap CMS
-    fetch('/ugorala/content/strona-glowna.json')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Nie udało się pobrać pliku JSON');
-        }
-        return response.json();
-      })
-      .then(data => {
-        // --- 1. SEKCJA HERO ---
-        if (data.hero) {
-          // Tło sekcji Hero (jeśli używasz background-image)
-          const heroBanner = document.querySelector('.hero-banner');
-          if (heroBanner && data.hero.image) {
-            heroBanner.style.backgroundImage = `linear-gradient(180deg, rgba(20, 16, 12, 0.38) 0%, rgba(20, 16, 12, 0.65) 100%), url('${data.hero.image}')`;
-          }
-          // Tytuł, podtytuł i badge
-          setText('.hero-title', data.hero.title);
-          setText('.hero-subtitle', data.hero.subtitle);
-          setText('.hero-badge', data.hero.badge);
-        }
+ document.addEventListener('DOMContentLoaded', () => {
+  fetch('/ugorala/content/strona-glowna.json')
+    .then(res => res.json())
+    .then(data => {
+      // Funkcja pomocnicza renderująca dodatkową listę zdjęć sekcji
+      const renderSectionImages = (containerSelector, imagesArray) => {
+        const container = document.querySelector(containerSelector);
+        if (!container || !Array.isArray(imagesArray)) return;
+        container.innerHTML = '';
+        imagesArray.forEach(item => {
+          const img = document.createElement('img');
+          img.src = item.zdjecie;
+          img.alt = item.podpis || 'Zdjęcie Ranczo u Górala';
+          container.appendChild(img);
+        });
+      };
 
-        // --- 2. SEKCJA O DOMKU (SEKCJA 1) ---
-        if (data.o_domku) {
-          setImage('#o-domku-img', data.o_domku.image);
-          setText('#o-domku-badge', data.o_domku.image_badge);
-          setText('#o-domku-heading', data.o_domku.heading);
-          setText('#o-domku-desc-1', data.o_domku.desc_1);
-          setText('#o-domku-desc-2', data.o_domku.desc_2);
-          setText('#o-domku-desc-3', data.o_domku.desc_3);
-        }
+      // Sekcja Hero
+      if (data.hero) {
+        setText('.hero-title', data.hero.title);
+        setText('.hero-subtitle', data.hero.subtitle);
+        setText('.hero-badge', data.hero.badge);
+        renderSectionImages('#hero-gallery', data.hero.images);
+      }
 
-        // --- 3. SEKCJA ATRAKCJE (SEKCJA 2) ---
-        if (data.sekcja_atrakcje) {
-          setImage('#atrakcje-img', data.sekcja_atrakcje.image);
-          setText('#atrakcje-badge', data.sekcja_atrakcje.image_badge);
-          setText('#atrakcje-heading', data.sekcja_atrakcje.heading);
-        }
+      // Sekcja O Nas
+      if (data.o_domku) {
+        setImage('#o-domku-img', data.o_domku.image);
+        setText('#o-domku-heading', data.o_domku.heading);
+        renderSectionImages('#o-domku-gallery', data.o_domku.images);
+      }
 
-        // --- 4. SEKCJA DLA KOGO (SEKCJA 4) ---
-        if (data.sekcja_dla_kogo) {
-          setImage('#dla-kogo-img', data.sekcja_dla_kogo.image);
-          setText('#dla-kogo-badge', data.sekcja_dla_kogo.image_badge);
-          setText('#dla-kogo-heading', data.sekcja_dla_kogo.heading);
-        }
+      // Sekcja Atrakcje
+      if (data.sekcja_atrakcje) {
+        setImage('#atrakcje-img', data.sekcja_atrakcje.image);
+        setText('#atrakcje-heading', data.sekcja_atrakcje.heading);
+        renderSectionImages('#atrakcje-gallery', data.sekcja_atrakcje.images);
+      }
 
-        // --- 5. SEKCJA KONTAKT (SEKCJA 5) ---
-        if (data.sekcja_kontakt) {
-          setImage('#kontakt-img', data.sekcja_kontakt.image);
-          setText('#kontakt-badge', data.sekcja_kontakt.image_badge);
-          setText('#kontakt-heading', data.sekcja_kontakt.heading);
-        }
+      // Sekcja Dla Kogo
+      if (data.sekcja_dla_kogo) {
+        setImage('#dla-kogo-img', data.sekcja_dla_kogo.image);
+        setText('#dla-kogo-heading', data.sekcja_dla_kogo.heading);
+        renderSectionImages('#dla-kogo-gallery', data.sekcja_dla_kogo.images);
+      }
 
-        // --- 6. DANE KONTAKTOWE I POKOJE ---
-        if (data.kontakt) {
-          setText('#kontakt-adres', data.kontakt.adres);
-          setText('#kontakt-telefon', data.kontakt.telefon);
-        }
-      })
-      .catch(error => console.error('Błąd podczas ładowania danych:', error));
-  });
+      // Sekcja Kontakt
+      if (data.sekcja_kontakt) {
+        setImage('#kontakt-img', data.sekcja_kontakt.image);
+        setText('#kontakt-heading', data.sekcja_kontakt.heading);
+        renderSectionImages('#kontakt-gallery', data.sekcja_kontakt.images);
+      }
 
-  // Funkcje pomocnicze do bezpiecznej podmiany tekstu i obrazków
-  function setText(selector, text) {
-    const el = document.querySelector(selector);
-    if (el && text) el.textContent = text;
-  }
+      // Galeria Główna
+      if (data.galeria) {
+        renderSectionImages('#main-gallery-container', data.galeria);
+      }
+    });
+});
 
-  function setImage(selector, src) {
-    const el = document.querySelector(selector);
-    if (el && src) el.src = src;
-  }
+function setText(selector, val) {
+  const el = document.querySelector(selector);
+  if (el && val) el.textContent = val;
+}
+
+function setImage(selector, src) {
+  const el = document.querySelector(selector);
+  if (el && src) el.src = src;
+}
 </script>
 </body>
 </html>
