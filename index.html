@@ -90,6 +90,9 @@
       height: auto;
       display: block;
       border-radius: 0; /* ostre krawędzie */
+      /* EFEKT VIBRANT DLA MIEJSCA NA STRONIE */
+      filter: saturate(135%) contrast(108%) brightness(102%);
+      transition: filter 0.3s ease, transform 0.4s ease;
     }
     
     /* Typografia nagłówków */
@@ -381,6 +384,8 @@
       padding: 80px 60px;
       text-align: center;
       border-bottom: 1px solid var(--border-subtle);
+      /* Dodatkowe wyostrzenie i nasycenie dla tła Hero */
+      filter: saturate(130%) contrast(105%);
     }
     
     .hero-container {
@@ -668,11 +673,12 @@
       display: block;
       border-radius: 0;
       opacity: 1;
-      transition: transform 0.4s ease;
     }
     
     .gallery-card:hover .gallery-img {
       transform: scale(1.05);
+      /* Jeszcze żywsze kolory po najechaniu na zdjęcie */
+      filter: saturate(150%) contrast(112%) brightness(105%);
     }
     
     .gallery-overlay {
@@ -920,6 +926,8 @@
       border-radius: 0;
       object-fit: contain;
       border: 1px solid var(--border-subtle);
+      /* Pełny efekt Vibrant również podczas powiększenia w Lightboxie */
+      filter: saturate(140%) contrast(110%) brightness(102%);
     }
     
     .lightbox-btn {
@@ -1520,7 +1528,7 @@
         });
       }
 
-      // 2. All 40 Gallery Images (zastąpione 32 zdjęcia nowymi linkami + zachowane pozostałe)
+      // 2. All 40 Gallery Images
       const galleryImages = [
         "images/z1.jpg",
         "images/z2.jpg",
