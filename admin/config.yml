@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: przemekszcz7/ugorala
   branch: main
   identity_url: https://auth.decapbridge.com/sites/e3432e15-9d66-4426-b482-5e005e0cdd46
