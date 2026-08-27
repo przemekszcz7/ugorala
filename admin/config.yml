@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: przemekszcz7/ugorala # ścieżka do Twojego repozytorium
   branch: main # lub master
 
 media_folder: "images"
