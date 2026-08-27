@@ -8,7 +8,6 @@ backend:
 media_folder: "images"
 public_folder: "/ugorala/images"
 
-# Wyłączenie podglądu zapobiega blokowaniu przycisku Publish przy podmienianiu samych grafik
 editor:
   preview: false
 
@@ -26,45 +25,85 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Zdjęcie tła Hero", name: "image", widget: "image" }
+              - { label: "Główne zdjęcie tła", name: "image", widget: "image" }
               - { label: "Tytuł", name: "title", widget: "string" }
               - { label: "Podtytuł", name: "subtitle", widget: "text" }
               - { label: "Etykieta lokalizacji", name: "badge", widget: "string" }
+              - label: "Dodatkowe zdjęcia Hero"
+                name: "images"
+                widget: "list"
+                required: false
+                summary: '{{fields.zdjecie}}'
+                fields:
+                  - { label: "Zdjęcie", name: "zdjecie", widget: "image" }
+                  - { label: "Podpis / ALT", name: "podpis", widget: "string", required: false }
 
           - label: "Sekcja 01 - O Nas"
             name: "o_domku"
             widget: "object"
             fields:
-              - { label: "Zdjęcie sekcji", name: "image", widget: "image" }
+              - { label: "Zdjęcie główne", name: "image", widget: "image" }
               - { label: "Etykieta na zdjęciu", name: "image_badge", widget: "string" }
               - { label: "Nagłówek", name: "heading", widget: "string" }
               - { label: "Opis (paragraf 1)", name: "desc_1", widget: "text" }
               - { label: "Opis (paragraf 2)", name: "desc_2", widget: "text" }
               - { label: "Opis (paragraf 3)", name: "desc_3", widget: "text" }
+              - label: "Dodatkowe zdjęcia sekcji"
+                name: "images"
+                widget: "list"
+                required: false
+                summary: '{{fields.zdjecie}}'
+                fields:
+                  - { label: "Zdjęcie", name: "zdjecie", widget: "image" }
+                  - { label: "Podpis / ALT", name: "podpis", widget: "string", required: false }
 
           - label: "Sekcja 02 - Atrakcje"
             name: "sekcja_atrakcje"
             widget: "object"
             fields:
-              - { label: "Zdjęcie sekcji", name: "image", widget: "image" }
+              - { label: "Zdjęcie główne", name: "image", widget: "image" }
               - { label: "Etykieta na zdjęciu", name: "image_badge", widget: "string" }
               - { label: "Nagłówek", name: "heading", widget: "string" }
+              - label: "Dodatkowe zdjęcia sekcji"
+                name: "images"
+                widget: "list"
+                required: false
+                summary: '{{fields.zdjecie}}'
+                fields:
+                  - { label: "Zdjęcie", name: "zdjecie", widget: "image" }
+                  - { label: "Podpis / ALT", name: "podpis", widget: "string", required: false }
 
           - label: "Sekcja 04 - Dla Kogo"
             name: "sekcja_dla_kogo"
             widget: "object"
             fields:
-              - { label: "Zdjęcie sekcji", name: "image", widget: "image" }
+              - { label: "Zdjęcie główne", name: "image", widget: "image" }
               - { label: "Etykieta na zdjęciu", name: "image_badge", widget: "string" }
               - { label: "Nagłówek", name: "heading", widget: "string" }
+              - label: "Dodatkowe zdjęcia sekcji"
+                name: "images"
+                widget: "list"
+                required: false
+                summary: '{{fields.zdjecie}}'
+                fields:
+                  - { label: "Zdjęcie", name: "zdjecie", widget: "image" }
+                  - { label: "Podpis / ALT", name: "podpis", widget: "string", required: false }
 
           - label: "Sekcja 05 - Kontakt"
             name: "sekcja_kontakt"
             widget: "object"
             fields:
-              - { label: "Zdjęcie sekcji", name: "image", widget: "image" }
+              - { label: "Zdjęcie główne", name: "image", widget: "image" }
               - { label: "Etykieta na zdjęciu", name: "image_badge", widget: "string" }
               - { label: "Nagłówek", name: "heading", widget: "string" }
+              - label: "Dodatkowe zdjęcia sekcji"
+                name: "images"
+                widget: "list"
+                required: false
+                summary: '{{fields.zdjecie}}'
+                fields:
+                  - { label: "Zdjęcie", name: "zdjecie", widget: "image" }
+                  - { label: "Podpis / ALT", name: "podpis", widget: "string", required: false }
 
           - label: "Adres i Kontakt"
             name: "kontakt"
@@ -95,7 +134,7 @@ collections:
               - { label: "Kategoria", name: "kategoria", widget: "string" }
               - { label: "Opis", name: "opis", widget: "text" }
 
-          - label: "Galeria Zdjęć"
+          - label: "Galeria Główna"
             name: "galeria"
             widget: "list"
             summary: '{{fields.podpis}}'
