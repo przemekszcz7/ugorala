@@ -1,5 +1,34 @@
 {
-  "tytul": "Ranczo ranczers",
+  "tytul": "Ranczo u Górala",
+  "hero": {
+    "image": "/ugorala/images/HERO.jpg",
+    "title": "Domek całoroczny na ponad 1 ha działki — cisza, las i prywatne jacuzzi",
+    "subtitle": "Kameralny, komfortowy obiekt wykończony drewnem. Obecnie do dyspozycji 10 miejsc noclegowych (docelowo do 18 osób). 4 niezależne sypialnie z prywatnymi łazienkami, ogromna 1-hektarowa przestrzeń i pełna prywatność.",
+    "badge": "Żarnowa 285, 38-100 Strzyżów • woj. podkarpackie"
+  },
+  "o_domku": {
+    "image": "/ugorala/images/sekcja 1.jpg",
+    "image_badge": "> 1 ha prywatnego terenu",
+    "heading": "Nowy standard wypoczynku na Podkarpaciu",
+    "desc_1": "Ranczo u Górala to nowo otwarty, całoroczny domek położony w Żarnowej (gmina Strzyżów, woj. podkarpackie) na rozległej działce o powierzchni ponad 1 hektara, bezpośrednio przy ścianie lasu.",
+    "desc_2": "Na ten moment obiekt oferuje komfortowe warunki dla maksymalnie 10 osób z perspektywą rozszerzenia docelowo do 18 gości. Wnętrze wykończone naturalnym drewnem mieści 4 niezależne sypialnie, z których każda posiada własną, nowoczesną łazienkę.",
+    "desc_3": "Do Państwa wyłącznej dyspozycji oddajemy prywatne jacuzzi zewnętrzne, w pełni wyposażoną kuchnię oraz nieograniczoną przestrzeń zieloną na ognisko, gry plenerowe i relaks na łonie natury."
+  },
+  "sekcja_atrakcje": {
+    "image": "/ugorala/images/sekcja 2.jpg",
+    "image_badge": "Pogórze Strzyżowskie",
+    "heading": "Bardzo blisko do wspaniałych atrakcji"
+  },
+  "sekcja_dla_kogo": {
+    "image": "/ugorala/images/z39.jpg",
+    "image_badge": "Prywatne Jacuzzi",
+    "heading": "Dla kogo stworzyliśmy to miejsce?"
+  },
+  "sekcja_kontakt": {
+    "image": "/ugorala/images/z38.jpg",
+    "image_badge": "Żarnowa 285 • Strzyżów",
+    "heading": "Skontaktuj się i zapytaj o wolny termin"
+  },
   "kontakt": {
     "adres": "Żarnowa 285, 38-100 Strzyżów",
     "wojewodztwo": "podkarpackie",
