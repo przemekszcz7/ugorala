@@ -1,0 +1,34 @@
+{
+  "tytul": "Ranczo u Górala",
+  "kontakt": {
+    "adres": "Żarnowa 285, 38-100 Strzyżów",
+    "wojewodztwo": "podkarpackie",
+    "telefon": "791 757 553"
+  },
+  "pokoje": {
+    "liczba_miejsc": "Obecnie do 10 osób (docelowo do 18 gości)",
+    "sypialnie": "4 niezależne sypialnie",
+    "lazienki": "Każdy pokój posiada prywatną, osobną łazienkę"
+  },
+  "udogodnienia": [
+    "Ponad 1 hektar prywatnej przestrzeni tuż przy lesie",
+    "Prywatne, całoroczne jacuzzi zewnętrzne",
+    "W pełni wyposażona kuchnia",
+    "Wyznaczone miejsce na ognisko i gry plenerowe"
+  ],
+  "atrakcje": [
+    {
+      "kategoria": "Kajaki i konie",
+      "opis": "Spływy kajakowe po Wisłoku oraz okoliczne stadniny koni."
+    },
+    {
+      "kategoria": "Zabytki historyczne",
+      "opis": "Naziemny schron kolejowy w Stępinie (ok. 400 m długości) oraz zabytkowy schron tunelowy w Żarnowej."
+    },
+    {
+      "kategoria": "Przyroda",
+      "opis": "Leśne szlaki spacerowe Pogórza Strzyżowskiego z bezpośrednim wejściem z działki."
+    }
+  ],
+  "galeria": []
+}
