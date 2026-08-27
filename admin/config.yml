@@ -2,9 +2,9 @@ backend:
   name: github
   repo: przemekszcz7/ugorala
   branch: main
-  base_url: https://auth.decapbridge.com
-  auth_endpoint: /sites/e3432e15-9d66-4426-b482-5e005e0cdd46/auth
-
+  identity_url: https://auth.decapbridge.com/sites/e3432e15-9d66-4426-b482-5e005e0cdd46
+  gateway_url: https://gateway.decapbridge.com
+  
 media_folder: "images"
 public_folder: "/images"
 
