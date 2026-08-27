@@ -4,7 +4,7 @@ backend:
   branch: main
   identity_url: https://auth.decapbridge.com/sites/e3432e15-9d66-4426-b482-5e005e0cdd46
   gateway_url: https://gateway.decapbridge.com
-  
+
 media_folder: "images"
 public_folder: "/ugorala/images"
 
@@ -17,7 +17,51 @@ collections:
         name: "strona_glowna"
         fields:
           - { label: "Tytuł Strony", name: "tytul", widget: "string", default: "Ranczo u Górala" }
-          
+
+          - label: "Sekcja Hero (Główna)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Zdjęcie tła Hero", name: "image", widget: "image" }
+              - { label: "Tytuł", name: "title", widget: "string" }
+              - { label: "Podtytuł", name: "subtitle", widget: "text" }
+              - { label: "Etykieta lokalizacji", name: "badge", widget: "string" }
+
+          - label: "Sekcja 01 - O Nas"
+            name: "o_domku"
+            widget: "object"
+            fields:
+              - { label: "Zdjęcie sekcji", name: "image", widget: "image" }
+              - { label: "Etykieta na zdjęciu", name: "image_badge", widget: "string" }
+              - { label: "Nagłówek", name: "heading", widget: "string" }
+              - { label: "Opis (paragraf 1)", name: "desc_1", widget: "text" }
+              - { label: "Opis (paragraf 2)", name: "desc_2", widget: "text" }
+              - { label: "Opis (paragraf 3)", name: "desc_3", widget: "text" }
+
+          - label: "Sekcja 02 - Atrakcje"
+            name: "sekcja_atrakcje"
+            widget: "object"
+            fields:
+              - { label: "Zdjęcie sekcji", name: "image", widget: "image" }
+              - { label: "Etykieta na zdjęciu", name: "image_badge", widget: "string" }
+              - { label: "Nagłówek", name: "heading", widget: "string" }
+
+          - label: "Sekcja 04 - Dla Kogo"
+            name: "sekcja_dla_kogo"
+            widget: "object"
+            fields:
+              - { label: "Zdjęcie sekcji", name: "image", widget: "image" }
+              - { label: "Etykieta na zdjęciu", name: "image_badge", widget: "string" }
+              - { label: "Nagłówek", name: "heading", widget: "string" }
+
+          - label: "Sekcja 05 - Kontakt"
+            name: "sekcja_kontakt"
+            widget: "object"
+            fields:
+              - { label: "Zdjęcie sekcji", name: "image", widget: "image" }
+              - { label: "Etykieta na zdjęciu", name: "image_badge", widget: "string" }
+              - { label: "Nagłówek", name: "heading", widget: "string" }
+
           - label: "Adres i Kontakt"
             name: "kontakt"
             widget: "object"
@@ -40,7 +84,7 @@ collections:
             summary: '{{fields.element}}'
             field: { label: "Udogodnienie", name: "element", widget: "string" }
 
-          - label: "Atrakcje w Okolicy"
+          - label: "Lista Atrakcji w Okolicy"
             name: "atrakcje"
             widget: "list"
             fields:
