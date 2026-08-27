@@ -7,8 +7,10 @@ backend:
 
 media_folder: "images"
 public_folder: "/ugorala/images"
-media_library:
-  name: uploadcare # Lub wyłącz domyślny cache podmieniając dynamicznie ścieżkę:
+
+# Wyłączenie podglądu zapobiega blokowaniu przycisku Publish przy podmienianiu samych grafik
+editor:
+  preview: false
 
 collections:
   - name: "strony"
