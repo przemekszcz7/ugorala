@@ -1,0 +1,53 @@
+backend:
+  name: git-gateway
+  branch: main # lub master
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "strony"
+    label: "Treść Strony"
+    files:
+      - file: "content/strona-glowna.json"
+        label: "Strona Główna - Ranczo u Górala"
+        name: "strona_glowna"
+        fields:
+          - { label: "Tytuł Strony", name: "tytul", widget: "string", default: "Ranczo u Górala" }
+          
+          - label: "Adres i Kontakt"
+            name: "kontakt"
+            widget: "object"
+            fields:
+              - { label: "Adres", name: "adres", widget: "string", default: "Żarnowa 285, 38-100 Strzyżów" }
+              - { label: "Województwo", name: "wojewodztwo", widget: "string", default: "podkarpackie" }
+              - { label: "Telefon", name: "telefon", widget: "string", default: "791 757 553" }
+
+          - label: "Pojemność i Pokoje"
+            name: "pokoje"
+            widget: "object"
+            fields:
+              - { label: "Liczba miejsc", name: "liczba_miejsc", widget: "string", default: "Do 10 osób (docelowo 18)" }
+              - { label: "Opis sypialni", name: "sypialnie", widget: "string", default: "4 niezależne sypialnie" }
+              - { label: "Opis łazienek", name: "lazienki", widget: "string", default: "Każdy pokój posiada prywatną, osobną łazienkę" }
+
+          - label: "Teren i Udogodnienia"
+            name: "udogodnienia"
+            widget: "list"
+            summary: '{{fields.element}}'
+            field: { label: "Udogodnienie", name: "element", widget: "string" }
+
+          - label: "Atrakcje w Okolicy"
+            name: "atrakcje"
+            widget: "list"
+            fields:
+              - { label: "Kategoria", name: "kategoria", widget: "string" }
+              - { label: "Opis", name: "opis", widget: "text" }
+
+          - label: "Galeria Zdjęć"
+            name: "galeria"
+            widget: "list"
+            summary: '{{fields.podpis}}'
+            fields:
+              - { label: "Zdjęcie", name: "zdjecie", widget: "image" }
+              - { label: "Podpis / Tekst alternatywny (ALT)", name: "podpis", widget: "string", required: false }
