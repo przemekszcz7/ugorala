@@ -1,23 +1,30 @@
 {
-  "tytul": "Ranczo u Górala",
-  "hero": {
-    "image": "/ugorala/images/HERO.jpg",
-    "title": "Domek całoroczny na ponad 1 ha działki — cisza, las i prywatne jacuzzi",
-    "subtitle": "Kameralny, komfortowy obiekt wykończony drewnem. Obecnie do dyspozycji 10 miejsc noclegowych (docelowo do 18 osób). 4 niezależne sypialnie z prywatnymi łazienkami, ogromna 1-hektarowa przestrzeń i pełna prywatność.",
-    "badge": "Żarnowa 285, 38-100 Strzyżów • woj. podkarpackie",
+  "kontakt": {
+    "adres": "Żarnowa 285, 38-100 Strzyżów",
+    "wojewodztwo": "podkarpackie",
+    "telefon": "791 757 553"
+  },
+  "sekcja_kontakt": {
+    "image": "/ugorala/images/z38.jpg",
+    "image_badge": "Żarnowa 285 • Strzyżów",
+    "heading": "Skontaktuj się i zapytaj o wolny termin",
     "images": [
-      { "zdjecie": "/ugorala/images/HERO.jpg", "podpis": "Zdjęcie tła Hero" }
+      {
+        "zdjecie": "/ugorala/images/z38.jpg",
+        "podpis": "Zdjęcie sekcji kontakt"
+      }
     ]
   },
-  "o_domku": {
-    "image": "/ugorala/images/sekcja 1.jpg",
-    "image_badge": "> 1 ha prywatnego terenu",
-    "heading": "Nowy standard wypoczynku na Podkarpaciu",
-    "desc_1": "Ranczo u Górala to nowo otwarty, całoroczny domek położony w Żarnowej (gmina Strzyżów, woj. podkarpackie) na rozległej działce o powierzchni ponad 1 hektara, bezpośrednio przy ścianie lasu.",
-    "desc_2": "Na ten moment obiekt oferuje komfortowe warunki dla maksymalnie 10 osób z perspektywą rozszerzenia docelowo do 18 gości. Wnętrze wykończone naturalnym drewnem mieści 4 niezależne sypialnie, z których każda posiada własną, nowoczesną łazienkę.",
-    "desc_3": "Do Państwa wyłącznej dyspozycji oddajemy prywatne jacuzzi zewnętrzne, w pełni wyposażoną kuchnię oraz nieograniczoną przestrzeń zieloną na ognisko, gry plenerowe i relaks na łonie natury.",
+  "tytul": "Ranczo u Górala",
+  "sekcja_dla_kogo": {
+    "image": "/ugorala/images/z39.jpg",
+    "image_badge": "Prywatne Jacuzzi",
+    "heading": "Dla kogo stworzyliśmy to miejsce?",
     "images": [
-      { "zdjecie": "/ugorala/images/sekcja 1.jpg", "podpis": "Zdjęcie sekcji 1" }
+      {
+        "zdjecie": "/ugorala/images/z39.jpg",
+        "podpis": "Zdjęcie sekcji dla kogo"
+      }
     ]
   },
   "sekcja_atrakcje": {
@@ -25,41 +32,12 @@
     "image_badge": "Pogórze Strzyżowskie",
     "heading": "Bardzo blisko do wspaniałych atrakcji",
     "images": [
-      { "zdjecie": "/ugorala/images/sekcja 2.jpg", "podpis": "Zdjęcie sekcji atrakcji" }
+      {
+        "zdjecie": "/ugorala/images/sekcja 2.jpg",
+        "podpis": "Zdjęcie sekcji atrakcji"
+      }
     ]
   },
-  "sekcja_dla_kogo": {
-    "image": "/ugorala/images/z39.jpg",
-    "image_badge": "Prywatne Jacuzzi",
-    "heading": "Dla kogo stworzyliśmy to miejsce?",
-    "images": [
-      { "zdjecie": "/ugorala/images/z39.jpg", "podpis": "Zdjęcie sekcji dla kogo" }
-    ]
-  },
-  "sekcja_kontakt": {
-    "image": "/ugorala/images/z38.jpg",
-    "image_badge": "Żarnowa 285 • Strzyżów",
-    "heading": "Skontaktuj się i zapytaj o wolny termin",
-    "images": [
-      { "zdjecie": "/ugorala/images/z38.jpg", "podpis": "Zdjęcie sekcji kontakt" }
-    ]
-  },
-  "kontakt": {
-    "adres": "Żarnowa 285, 38-100 Strzyżów",
-    "wojewodztwo": "podkarpackie",
-    "telefon": "791 757 553"
-  },
-  "pokoje": {
-    "liczba_miejsc": "Obecnie do 10 osób (docelowo do 18 gości)",
-    "sypialnie": "4 niezależne sypialnie",
-    "lazienki": "Każdy pokój posiada prywatną, osobną łazienkę"
-  },
-  "udogodnienia": [
-    "Ponad 1 hektar prywatnej przestrzeni tuż przy lesie",
-    "Prywatne, całoroczne jacuzzi zewnętrzne",
-    "W pełni wyposażona kuchnia",
-    "Wyznaczone miejsce na ognisko i gry plenerowe"
-  ],
   "atrakcje": [
     {
       "kategoria": "Kajaki i konie",
@@ -75,45 +53,208 @@
     }
   ],
   "galeria": [
-    { "zdjecie": "/ugorala/images/z1.jpg", "podpis": "Zdjęcie 1" },
-    { "zdjecie": "/ugorala/images/z2.jpg", "podpis": "Zdjęcie 2" },
-    { "zdjecie": "/ugorala/images/z3.jpg", "podpis": "Zdjęcie 3" },
-    { "zdjecie": "/ugorala/images/z4.jpg", "podpis": "Zdjęcie 4" },
-    { "zdjecie": "/ugorala/images/z5.jpg", "podpis": "Zdjęcie 5" },
-    { "zdjecie": "/ugorala/images/z6.jpg", "podpis": "Zdjęcie 6" },
-    { "zdjecie": "/ugorala/images/z7.jpg", "podpis": "Zdjęcie 7" },
-    { "zdjecie": "/ugorala/images/z8.jpg", "podpis": "Zdjęcie 8" },
-    { "zdjecie": "/ugorala/images/z9.jpg", "podpis": "Zdjęcie 9" },
-    { "zdjecie": "/ugorala/images/z10.jpg", "podpis": "Zdjęcie 10" },
-    { "zdjecie": "/ugorala/images/z11.jpg", "podpis": "Zdjęcie 11" },
-    { "zdjecie": "/ugorala/images/z12.jpg", "podpis": "Zdjęcie 12" },
-    { "zdjecie": "/ugorala/images/z13.jpg", "podpis": "Zdjęcie 13" },
-    { "zdjecie": "/ugorala/images/z14.jpg", "podpis": "Zdjęcie 14" },
-    { "zdjecie": "/ugorala/images/z15.jpg", "podpis": "Zdjęcie 15" },
-    { "zdjecie": "/ugorala/images/z16.jpg", "podpis": "Zdjęcie 16" },
-    { "zdjecie": "/ugorala/images/z17.jpg", "podpis": "Zdjęcie 17" },
-    { "zdjecie": "/ugorala/images/z18.jpg", "podpis": "Zdjęcie 18" },
-    { "zdjecie": "/ugorala/images/z19.jpg", "podpis": "Zdjęcie 19" },
-    { "zdjecie": "/ugorala/images/z20.jpg", "podpis": "Zdjęcie 20" },
-    { "zdjecie": "/ugorala/images/z21.jpg", "podpis": "Zdjęcie 21" },
-    { "zdjecie": "/ugorala/images/z22.jpg", "podpis": "Zdjęcie 22" },
-    { "zdjecie": "/ugorala/images/z23.jpg", "podpis": "Zdjęcie 23" },
-    { "zdjecie": "/ugorala/images/z24.jpg", "podpis": "Zdjęcie 24" },
-    { "zdjecie": "/ugorala/images/z25.jpg", "podpis": "Zdjęcie 25" },
-    { "zdjecie": "/ugorala/images/z26.jpg", "podpis": "Zdjęcie 26" },
-    { "zdjecie": "/ugorala/images/z27.jpg", "podpis": "Zdjęcie 27" },
-    { "zdjecie": "/ugorala/images/z28.jpg", "podpis": "Zdjęcie 28" },
-    { "zdjecie": "/ugorala/images/z29.jpg", "podpis": "Zdjęcie 29" },
-    { "zdjecie": "/ugorala/images/z30.jpg", "podpis": "Zdjęcie 30" },
-    { "zdjecie": "/ugorala/images/z31.jpg", "podpis": "Zdjęcie 31" },
-    { "zdjecie": "/ugorala/images/z32.jpg", "podpis": "Zdjęcie 32" },
-    { "zdjecie": "/ugorala/images/z33.jpg", "podpis": "Zdjęcie 33" },
-    { "zdjecie": "/ugorala/images/z34.jpg", "podpis": "Zdjęcie 34" },
-    { "zdjecie": "/ugorala/images/z35.jpg", "podpis": "Zdjęcie 35" },
-    { "zdjecie": "/ugorala/images/z36.jpg", "podpis": "Zdjęcie 36" },
-    { "zdjecie": "/ugorala/images/z37.jpg", "podpis": "Zdjęcie 37" },
-    { "zdjecie": "/ugorala/images/z38.jpg", "podpis": "Zdjęcie 38" },
-    { "zdjecie": "/ugorala/images/z39.jpg", "podpis": "Zdjęcie 39" },
-    { "zdjecie": "/ugorala/images/z40.jpg", "podpis": "Zdjęcie 40" }
-  ]
+    {
+      "zdjecie": "/ugorala/images/z1.jpg",
+      "podpis": "Zdjęcie 1"
+    },
+    {
+      "zdjecie": "/ugorala/images/z2.jpg",
+      "podpis": "Zdjęcie 2"
+    },
+    {
+      "zdjecie": "/ugorala/images/z3.jpg",
+      "podpis": "Zdjęcie 3"
+    },
+    {
+      "zdjecie": "/ugorala/images/z4.jpg",
+      "podpis": "Zdjęcie 4"
+    },
+    {
+      "zdjecie": "/ugorala/images/z5.jpg",
+      "podpis": "Zdjęcie 5"
+    },
+    {
+      "zdjecie": "/ugorala/images/z6.jpg",
+      "podpis": "Zdjęcie 6"
+    },
+    {
+      "zdjecie": "/ugorala/images/z7.jpg",
+      "podpis": "Zdjęcie 7"
+    },
+    {
+      "zdjecie": "/ugorala/images/z8.jpg",
+      "podpis": "Zdjęcie 8"
+    },
+    {
+      "zdjecie": "/ugorala/images/z9.jpg",
+      "podpis": "Zdjęcie 9"
+    },
+    {
+      "zdjecie": "/ugorala/images/z10.jpg",
+      "podpis": "Zdjęcie 10"
+    },
+    {
+      "zdjecie": "/ugorala/images/z11.jpg",
+      "podpis": "Zdjęcie 11"
+    },
+    {
+      "zdjecie": "/ugorala/images/z12.jpg",
+      "podpis": "Zdjęcie 12"
+    },
+    {
+      "zdjecie": "/ugorala/images/z13.jpg",
+      "podpis": "Zdjęcie 13"
+    },
+    {
+      "zdjecie": "/ugorala/images/z14.jpg",
+      "podpis": "Zdjęcie 14"
+    },
+    {
+      "zdjecie": "/ugorala/images/z15.jpg",
+      "podpis": "Zdjęcie 15"
+    },
+    {
+      "zdjecie": "/ugorala/images/z16.jpg",
+      "podpis": "Zdjęcie 16"
+    },
+    {
+      "zdjecie": "/ugorala/images/z17.jpg",
+      "podpis": "Zdjęcie 17"
+    },
+    {
+      "zdjecie": "/ugorala/images/z18.jpg",
+      "podpis": "Zdjęcie 18"
+    },
+    {
+      "zdjecie": "/ugorala/images/z19.jpg",
+      "podpis": "Zdjęcie 19"
+    },
+    {
+      "zdjecie": "/ugorala/images/z20.jpg",
+      "podpis": "Zdjęcie 20"
+    },
+    {
+      "zdjecie": "/ugorala/images/z21.jpg",
+      "podpis": "Zdjęcie 21"
+    },
+    {
+      "zdjecie": "/ugorala/images/z22.jpg",
+      "podpis": "Zdjęcie 22"
+    },
+    {
+      "zdjecie": "/ugorala/images/z23.jpg",
+      "podpis": "Zdjęcie 23"
+    },
+    {
+      "zdjecie": "/ugorala/images/z24.jpg",
+      "podpis": "Zdjęcie 24"
+    },
+    {
+      "zdjecie": "/ugorala/images/z25.jpg",
+      "podpis": "Zdjęcie 25"
+    },
+    {
+      "zdjecie": "/ugorala/images/z26.jpg",
+      "podpis": "Zdjęcie 26"
+    },
+    {
+      "zdjecie": "/ugorala/images/z27.jpg",
+      "podpis": "Zdjęcie 27"
+    },
+    {
+      "zdjecie": "/ugorala/images/z28.jpg",
+      "podpis": "Zdjęcie 28"
+    },
+    {
+      "zdjecie": "/ugorala/images/z29.jpg",
+      "podpis": "Zdjęcie 29"
+    },
+    {
+      "zdjecie": "/ugorala/images/z30.jpg",
+      "podpis": "Zdjęcie 30"
+    },
+    {
+      "zdjecie": "/ugorala/images/z31.jpg",
+      "podpis": "Zdjęcie 31"
+    },
+    {
+      "zdjecie": "/ugorala/images/z32.jpg",
+      "podpis": "Zdjęcie 32"
+    },
+    {
+      "zdjecie": "/ugorala/images/z33.jpg",
+      "podpis": "Zdjęcie 33"
+    },
+    {
+      "zdjecie": "/ugorala/images/z34.jpg",
+      "podpis": "Zdjęcie 34"
+    },
+    {
+      "zdjecie": "/ugorala/images/z35.jpg",
+      "podpis": "Zdjęcie 35"
+    },
+    {
+      "zdjecie": "/ugorala/images/z36.jpg",
+      "podpis": "Zdjęcie 36"
+    },
+    {
+      "zdjecie": "/ugorala/images/z37.jpg",
+      "podpis": "Zdjęcie 37"
+    },
+    {
+      "zdjecie": "/ugorala/images/z38.jpg",
+      "podpis": "Zdjęcie 38"
+    },
+    {
+      "zdjecie": "/ugorala/images/z39.jpg",
+      "podpis": "Zdjęcie 39"
+    },
+    {
+      "zdjecie": "/ugorala/images/z40.jpg",
+      "podpis": "Zdjęcie 40"
+    },
+    {
+      "zdjecie": "/ugorala/images/717201341_978206468353252_4323968915991920777_n-1-.jpg"
+    },
+    {
+      "zdjecie": "/ugorala/images/481032139_616842084489694_6965225212112104810_n.jpg"
+    }
+  ],
+  "udogodnienia": [
+    "Ponad 1 hektar prywatnej przestrzeni tuż przy lesie",
+    "Prywatne, całoroczne jacuzzi zewnętrzne",
+    "W pełni wyposażona kuchnia",
+    "Wyznaczone miejsce na ognisko i gry plenerowe"
+  ],
+  "hero": {
+    "image": "/ugorala/images/HERO.jpg",
+    "title": "Domek całoroczny na ponad 1 ha działki — cisza, las i prywatne jacuzzi",
+    "subtitle": "Kameralny, komfortowy obiekt wykończony drewnem. Obecnie do dyspozycji 10 miejsc noclegowych (docelowo do 18 osób). 4 niezależne sypialnie z prywatnymi łazienkami, ogromna 1-hektarowa przestrzeń i pełna prywatność.",
+    "badge": "Żarnowa 285, 38-100 Strzyżów • woj. podkarpackie",
+    "images": [
+      {
+        "zdjecie": "/ugorala/images/HERO.jpg",
+        "podpis": "Zdjęcie tła Hero"
+      }
+    ]
+  },
+  "o_domku": {
+    "image": "/ugorala/images/sekcja 1.jpg",
+    "image_badge": "> 1 ha prywatnego terenu",
+    "heading": "Nowy standard wypoczynku na Podkarpaciu",
+    "desc_1": "Ranczo u Górala to nowo otwarty, całoroczny domek położony w Żarnowej (gmina Strzyżów, woj. podkarpackie) na rozległej działce o powierzchni ponad 1 hektara, bezpośrednio przy ścianie lasu.",
+    "desc_2": "Na ten moment obiekt oferuje komfortowe warunki dla maksymalnie 10 osób z perspektywą rozszerzenia docelowo do 18 gości. Wnętrze wykończone naturalnym drewnem mieści 4 niezależne sypialnie, z których każda posiada własną, nowoczesną łazienkę.",
+    "desc_3": "Do Państwa wyłącznej dyspozycji oddajemy prywatne jacuzzi zewnętrzne, w pełni wyposażoną kuchnię oraz nieograniczoną przestrzeń zieloną na ognisko, gry plenerowe i relaks na łonie natury.",
+    "images": [
+      {
+        "zdjecie": "/ugorala/images/sekcja 1.jpg",
+        "podpis": "Zdjęcie sekcji 1"
+      }
+    ]
+  },
+  "pokoje": {
+    "liczba_miejsc": "Obecnie do 10 osób (docelowo do 18 gości)",
+    "sypialnie": "4 niezależne sypialnie",
+    "lazienki": "Każdy pokój posiada prywatną, osobną łazienkę"
+  }
 }
