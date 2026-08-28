@@ -1676,13 +1676,131 @@
     });
   </script>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Aktualizacja roku w stopce
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Podpięcie brakujących identyfikatorów do istniejących elementów w strukturze HTML
-  const assignMissingIDs = () => {
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle && !heroTitle.id) heroTitle.id = 'hero-title';
+    // 2. Mobile Menu Toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileDropdown = document.getElementById('mobile-dropdown');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
+    if (mobileToggle && mobileDropdown) {
+      mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('active');
+        mobileDropdown.classList.toggle('open');
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileToggle.classList.remove('active');
+          mobileDropdown.classList.remove('open');
+        });
+      });
+    }
+
+    // 3. Obsługa Lightboxa (pełnowymiarowego podglądu)
+    let galleryImages = []; // Tablica uzupełniana dynamicznie z CMS
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      if (galleryImages.length === 0) return;
+      currentIndex = index;
+      updateLightbox();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightbox() {
+      if (!galleryImages[currentIndex]) return;
+      lightboxImg.src = galleryImages[currentIndex];
+      lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+      
+      const nextIdx = (currentIndex + 1) % galleryImages.length;
+      const preloadNext = new Image();
+      preloadNext.src = galleryImages[nextIdx];
+    }
+
+    function nextImage() {
+      if (galleryImages.length === 0) return;
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      updateLightbox();
+    }
+
+    function prevImage() {
+      if (galleryImages.length === 0) return;
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      updateLightbox();
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxNext) lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+    if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
+    
+    if (lightbox) {
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+          closeLightbox();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox || !lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    });
+
+    // 4. Scroll-to-top button
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    if (scrollTopBtn) {
+      scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // 5. Animacje scroll-reveal
+    const revealElements = document.querySelectorAll('.section, .gallery-section-wrapper');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('revealed'));
+    }
+
+    // 6. Podpięcie ID i pobieranie danych z pliku JSON (CMS)
     const oDomkuImg = document.querySelector('#o-domku .section-media img');
     if (oDomkuImg) oDomkuImg.id = 'o-domku-img';
 
@@ -1694,95 +1812,81 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const kontaktImg = document.querySelector('#kontakt .section-media img');
     if (kontaktImg) kontaktImg.id = 'kontakt-img';
-  };
 
-  assignMissingIDs();
-
-  // Pobieranie danych z CMS i dynamiczne renderowanie
-  fetch('/ugorala/content/strona-glowna.json')
-    .then(res => res.json())
-    .then(data => {
-      
-      const renderSectionImages = (parentSelector, containerId, imagesArray) => {
-        if (!Array.isArray(imagesArray) || imagesArray.length === 0) return;
-        
-        let container = document.getElementById(containerId);
-        if (!container) {
-          const parent = document.querySelector(parentSelector);
-          if (parent) {
-            container = document.createElement('div');
-            container.id = containerId;
-            container.className = 'cms-dynamic-gallery';
-            container.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-top: 15px;';
-            parent.appendChild(container);
-          }
+    fetch('/ugorala/content/strona-glowna.json')
+      .then(res => res.json())
+      .then(data => {
+        // Obrazki główne w sekcjach
+        if (data.o_domku) {
+          setImage('#o-domku-img', data.o_domku.image);
+          setText('#o-domku-heading', data.o_domku.heading);
         }
-        
-        if (container) {
-          container.innerHTML = '';
-          imagesArray.forEach(item => {
-            const img = document.createElement('img');
-            img.src = item.zdjecie || item;
-            img.alt = item.podpis || 'Zdjęcie z panelu';
-            img.style.cssText = 'width: 100%; height: 120px; object-fit: cover; border-radius: 4px;';
-            container.appendChild(img);
+        if (data.sekcja_atrakcje) {
+          setImage('#atrakcje-img', data.sekcja_atrakcje.image);
+          setText('#atrakcje-heading', data.sekcja_atrakcje.heading);
+        }
+        if (data.sekcja_dla_kogo) {
+          setImage('#dla-kogo-img', data.sekcja_dla_kogo.image);
+          setText('#dla-kogo-heading', data.sekcja_dla_kogo.heading);
+        }
+        if (data.sekcja_kontakt) {
+          setImage('#kontakt-img', data.sekcja_kontakt.image);
+          setText('#kontakt-heading', data.sekcja_kontakt.heading);
+        }
+
+        // Renderowanie Głównej Galerii z JSON
+        const galleryContainer = document.getElementById('gallery-container');
+        if (galleryContainer && data.galeria && Array.isArray(data.galeria)) {
+          galleryContainer.innerHTML = ''; // Wyczyszczenie duplikatów
+          
+          // Zapisujemy ścieżki do globalnej tablicy na potrzeby Lightboxa
+          galleryImages = data.galeria.map(item => typeof item === 'string' ? item : item.zdjecie);
+
+          const fragment = document.createDocumentFragment();
+          galleryImages.forEach((url, idx) => {
+            const card = document.createElement('div');
+            card.className = 'gallery-card';
+            card.setAttribute('data-index', idx);
+            
+            const isPriority = idx < 4;
+            card.innerHTML = `
+              <img src="${url}" 
+                   alt="Ranczo u Górala - Zdjęcie ${idx + 1}" 
+                   ${isPriority ? 'loading="eager" fetchpriority="high"' : 'loading="lazy" fetchpriority="low"'} 
+                   decoding="async" 
+                   referrerpolicy="no-referrer"
+                   class="gallery-img" 
+                   width="600" 
+                   height="450">
+              <div class="gallery-overlay">
+                <div class="gallery-zoom-icon">
+                  <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+              </div>
+            `;
+            
+            card.addEventListener('click', () => {
+              openLightbox(idx);
+            });
+            
+            fragment.appendChild(card);
           });
+          
+          galleryContainer.appendChild(fragment);
         }
-      };
+      })
+      .catch(err => console.error("Błąd ładowania pliku JSON:", err));
+  });
 
-      // Sekcja Hero
-      if (data.hero) {
-        setText('.hero-title', data.hero.title);
-        setText('.hero-subtitle', data.hero.subtitle);
-        setText('.hero-badge', data.hero.badge);
-        renderSectionImages('.hero-container', 'hero-gallery', data.hero.images);
-      }
+  function setText(selector, val) {
+    const el = document.querySelector(selector);
+    if (el && val) el.textContent = val;
+  }
 
-      // Sekcja O Nas
-      if (data.o_domku) {
-        setImage('#o-domku-img', data.o_domku.image);
-        setText('#o-domku-heading', data.o_domku.heading);
-        renderSectionImages('#o-domku .section-content', 'o-domku-gallery', data.o_domku.images);
-      }
-
-      // Sekcja Atrakcje
-      if (data.sekcja_atrakcje) {
-        setImage('#atrakcje-img', data.sekcja_atrakcje.image);
-        setText('#atrakcje-heading', data.sekcja_atrakcje.heading);
-        renderSectionImages('#atrakcje .section-content', 'atrakcje-gallery', data.sekcja_atrakcje.images);
-      }
-
-      // Sekcja Dla Kogo
-      if (data.sekcja_dla_kogo) {
-        setImage('#dla-kogo-img', data.sekcja_dla_kogo.image);
-        setText('#dla-kogo-heading', data.sekcja_dla_kogo.heading);
-        renderSectionImages('#dla-kogo .section-content', 'dla-kogo-gallery', data.sekcja_dla_kogo.images);
-      }
-
-      // Sekcja Kontakt
-      if (data.sekcja_kontakt) {
-        setImage('#kontakt-img', data.sekcja_kontakt.image);
-        setText('#kontakt-heading', data.sekcja_kontakt.heading);
-        renderSectionImages('#kontakt .section-content', 'kontakt-gallery', data.sekcja_kontakt.images);
-      }
-
-      // Główna Galeria
-      if (data.galeria && Array.isArray(data.galeria)) {
-        renderSectionImages('#galeria', 'main-gallery-container', data.galeria);
-      }
-    })
-    .catch(err => console.error("Błąd ładowania JSON z CMS:", err));
-});
-
-function setText(selector, val) {
-  const el = document.querySelector(selector);
-  if (el && val) el.textContent = val;
-}
-
-function setImage(selector, src) {
-  const el = document.querySelector(selector);
-  if (el && src) el.src = src;
-}
+  function setImage(selector, src) {
+    const el = document.querySelector(selector);
+    if (el && src) el.src = src;
+  }
 </script>
 </body>
 </html>
