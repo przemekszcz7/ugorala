@@ -5,28 +5,35 @@
   <meta name="referrer" content="no-referrer">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Ranczo u Górala | Domek Całoroczny na Wynajem, Żarnowa / Strzyżów</title>
-  <meta name="description" content="Nowy domek całoroczny na wynajem na ponad 1 ha działki w Żarnowej (38-100 Strzyżów). Jacuzzi, 4 sypialnie z łazienkami, do 10 osób (docelowo 18).">
+  <meta name="description" content="Nowy domek całoroczny na wynajem na ponad 1 ha działki w Żarnowej – 25 km od Rzeszowa, 80 km od Soliny. Jacuzzi, 4 sypialnie z łazienkami, do 10 osób (docelowo 18).">
   
   <!-- Open Graph -->
   <meta property="og:title" content="Ranczo u Górala | Domek Całoroczny na Wynajem, Żarnowa">
-  <meta property="og:description" content="Domek całoroczny na ponad 1 ha działki tuż przy lesie. Prywatne jacuzzi, 4 pokoje z łazienkami, obecnie do 10 osób (docelowo 18). Blisko spływy kajakowe, schron w Stępinie i tunel w Żarnowej.">
-  <meta property="og:image" content="images/HERO.jpg">
+  <meta property="og:description" content="Domek całoroczny na ponad 1 ha działki tuż przy lesie – 25 km od Rzeszowa, 80 km od Soliny. Prywatne jacuzzi, 4 pokoje z łazienkami, obecnie do 10 osób (docelowo 18).">
+  <meta property="og:image" content="https://i.ibb.co/HTs1zLGT/769007941-122105251899422300-67517021702331855-n.jpg">
   <meta property="og:type" content="website">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+  <link rel="icon" type="image/jpeg" href="https://i.ibb.co/h1L9Gzyd/769034735-122105724765422300-330726384366473199-n.jpg">
   
   <!-- Performance Optimizations / Preconnect -->
+  <link rel="dns-prefetch" href="https://www.facebook.com">
+  <link rel="preconnect" href="https://www.facebook.com" crossorigin>
+  <link rel="dns-prefetch" href="https://i.postimg.cc">
+  <link rel="preconnect" href="https://i.postimg.cc" crossorigin>
+  <link rel="dns-prefetch" href="https://i.ibb.co">
+  <link rel="preconnect" href="https://i.ibb.co" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Google Fonts: Cormorant Garamond & Poppins -->
+  <link rel="preload" as="image" href="https://i.ibb.co/HTs1zLGT/769007941-122105251899422300-67517021702331855-n.jpg" fetchpriority="high">
+  
+  <!-- Google Fonts: Cormorant Garamond & Poppins / Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <style>
     /* ==========================================================================
-       1. PALETA KOLORÓW I ZMIENNE CSS
+       1. PALETA KOLORÓW I ZMIENNE CSS (JASNY, CIEPŁY, ZACHĘCAJĄCY MOTYW NATURY)
        ========================================================================== */
     :root {
       --bg-primary: #FAF8F5;
@@ -88,15 +95,17 @@
       max-width: 100%;
       height: auto;
       display: block;
-      border-radius: 0;
+      border-radius: 0; /* ostre krawędzie */
     }
     
+    /* Typografia nagłówków */
     h1, h2, h3, h4, .font-heading {
       font-family: 'Cormorant Garamond', Georgia, serif;
       word-break: break-word;
       overflow-wrap: break-word;
     }
     
+    /* Logo */
     .logo {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 28px;
@@ -117,6 +126,7 @@
       stroke-width: 1.75;
     }
     
+    /* Nagłówki sekcji (H2) */
     h2.section-heading {
       font-size: 34px;
       letter-spacing: 1.5px;
@@ -127,6 +137,7 @@
       line-height: 1.25;
     }
     
+    /* Numeracja sekcji (01, 02...) */
     .section-number {
       font-size: 13px;
       color: var(--accent);
@@ -137,6 +148,7 @@
       display: block;
     }
     
+    /* Treść opisowa (paragraf) */
     p.section-desc, .desc-text {
       font-size: 16px;
       line-height: 1.75;
@@ -145,6 +157,7 @@
       margin-bottom: 16px;
     }
     
+    /* Przycisk akcji w stylu "Click Here" */
     .btn-action {
       display: inline-flex;
       align-items: center;
@@ -171,6 +184,7 @@
       transform: translateY(-1px);
     }
     
+    /* Ikony SVG */
     .icon {
       width: 18px;
       height: 18px;
@@ -185,6 +199,7 @@
     /* ==========================================================================
        3. HEADER I NAWIGACJA
        ========================================================================== */
+    /* Top bar (kontakt) */
     .top-bar {
       background: #F3EFEA;
       padding: 10px 60px;
@@ -214,6 +229,7 @@
       gap: 20px;
     }
     
+    /* Główny nav */
     .navbar {
       position: sticky;
       top: 0;
@@ -234,6 +250,7 @@
       list-style: none;
     }
     
+    /* Linki menu */
     .nav-menu a {
       text-transform: uppercase;
       font-size: 13.5px;
@@ -264,6 +281,7 @@
       width: 100%;
     }
     
+    /* CTA button "ZAREZERWUJ TERMIN" */
     .btn-cta {
       background: var(--accent);
       color: #FFFFFF;
@@ -290,6 +308,7 @@
       color: #FFFFFF;
     }
     
+    /* Mobile Toggle */
     .mobile-toggle {
       display: none;
       flex-direction: column;
@@ -320,6 +339,7 @@
       transform: translateY(-9px) rotate(-45deg);
     }
     
+    /* Mobile Nav Dropdown */
     .mobile-nav-panel {
       display: none;
       flex-direction: column;
@@ -360,7 +380,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image: linear-gradient(180deg, rgba(20, 16, 12, 0.38) 0%, rgba(20, 16, 12, 0.65) 100%), url('images/HERO.jpg');
+      background-image: linear-gradient(180deg, rgba(20, 16, 12, 0.38) 0%, rgba(20, 16, 12, 0.65) 100%), url('https://i.ibb.co/HTs1zLGT/769007941-122105251899422300-67517021702331855-n.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -452,7 +472,7 @@
     }
 
     /* ==========================================================================
-       4. SEKCJE TREŚCI (ZIG-ZAG)
+       4. SEKCJE TREŚCI (NAPRZEMIENNY GRID, ZIG-ZAG)
        ========================================================================== */
     .section {
       display: grid;
@@ -462,6 +482,8 @@
       padding: 100px 60px;
       border-bottom: 1px solid var(--border-subtle);
       background: var(--bg-primary);
+      
+      /* 7. Animacje scroll-reveal */
       opacity: 1;
       transform: translateY(0);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -478,7 +500,7 @@
     }
     
     .section:nth-child(even) {
-      direction: rtl;
+      direction: rtl; /* odwraca kolejność zdjęcie/tekst */
       background: var(--bg-tertiary);
     }
     
@@ -491,7 +513,7 @@
       height: auto;
       object-fit: cover;
       display: block;
-      border-radius: 0;
+      border-radius: 0; /* bez zaokrągleń, ostre krawędzie */
       border: 1px solid var(--border-subtle);
       background-color: var(--bg-secondary);
       box-shadow: var(--card-shadow);
@@ -524,6 +546,7 @@
       backdrop-filter: blur(8px);
     }
 
+    /* Udogodnienia lista / tagi w sekcji */
     .amenity-tags {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -550,6 +573,7 @@
       color: var(--accent);
     }
     
+    /* Subgrid dla atrakcji i grup docelowych */
     .cards-subgrid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -598,7 +622,7 @@
     }
 
     /* ==========================================================================
-       SEKCJA GALERII
+       SEKCJA GALERII (40 ZDJĘĆ Z OSTREMI KRAWĘDZIAMI)
        ========================================================================== */
     .gallery-section-wrapper {
       padding: 100px 60px;
@@ -682,6 +706,57 @@
       justify-content: center;
       border-radius: 50%;
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    /* ==========================================================================
+       SEKCJA FILMÓW (REELS / WIDEO)
+       ========================================================================== */
+    .videos-section-wrapper {
+      padding: 100px 60px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: var(--bg-tertiary);
+    }
+
+    .videos-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .videos-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 26px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .video-card {
+      width: 267px;
+      height: 476px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .video-card:hover {
+      box-shadow: var(--card-shadow-hover);
+      transform: translateY(-4px);
+      border-color: var(--border-accent);
+    }
+
+    .video-card iframe {
+      width: 267px;
+      height: 476px;
+      border: none;
+      overflow: hidden;
+      display: block;
     }
 
     /* ==========================================================================
@@ -769,7 +844,7 @@
     }
 
     /* ==========================================================================
-       6. STOPKA
+       6. STOPKA (CIEPŁY ODCIEŃ DREWNA ALPEJSKIEGO Z GÓRNĄ KRAWĘDZIĄ W KSZTAŁCIE FALI)
        ========================================================================== */
     footer {
       background: #231E19;
@@ -779,6 +854,7 @@
       border-top: 1px solid var(--border-subtle);
     }
     
+    /* Górne wcięcie łukowe / fala */
     .footer-wave {
       position: absolute;
       top: -30px;
@@ -836,6 +912,7 @@
       color: #FFFFFF;
     }
     
+    /* Wyśrodkowany e-mail kontaktowy */
     .footer-email-center {
       text-align: center;
       padding: 60px 0;
@@ -964,7 +1041,7 @@
         padding: 80px 24px;
         gap: 40px;
       }
-      .gallery-section-wrapper {
+      .gallery-section-wrapper, .videos-section-wrapper {
         padding: 80px 24px;
       }
       .hero-banner {
@@ -1013,6 +1090,14 @@
         direction: ltr;
       }
       
+      .gallery-section-wrapper, .videos-section-wrapper {
+        padding: 60px 20px;
+      }
+
+      .videos-grid {
+        gap: 20px;
+      }
+
       .footer-main-grid {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1040,10 +1125,17 @@
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
           <circle cx="12" cy="10" r="3"/>
         </svg>
-        Żarnowa 285, 38-100 Strzyżów &bull; woj. podkarpackie
+        Żarnowa 285, 38-100 Strzyżów &bull; 25 km od Rzeszowa &bull; 80 km od Soliny
       </span>
     </div>
     <div class="top-bar-right">
+      <a href="mailto:pieta.marcin@wp.pl">
+        <svg class="icon" viewBox="0 0 24 24">
+          <rect width="20" height="16" x="2" y="4" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+        pieta.marcin@wp.pl
+      </a>
       <a href="tel:791757553">
         <svg class="icon" viewBox="0 0 24 24">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -1067,6 +1159,7 @@
       <li><a href="#udogodnienia">Udogodnienia</a></li>
       <li><a href="#atrakcje">Atrakcje</a></li>
       <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#filmy">Filmy</a></li>
       <li><a href="#dla-kogo">Dla kogo</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
@@ -1086,6 +1179,7 @@
       <a href="#udogodnienia" class="mobile-link">Udogodnienia</a>
       <a href="#atrakcje" class="mobile-link">Atrakcje w okolicy</a>
       <a href="#galeria" class="mobile-link">Galeria</a>
+      <a href="#filmy" class="mobile-link">Filmy i Rolki</a>
       <a href="#dla-kogo" class="mobile-link">Dla kogo</a>
       <a href="#kontakt" class="mobile-link">Kontakt i Rezerwacja</a>
       <div style="margin-top: 16px;">
@@ -1104,13 +1198,13 @@
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
           <circle cx="12" cy="10" r="3"/>
         </svg>
-        Żarnowa 285, 38-100 Strzyżów &bull; woj. podkarpackie
+        Żarnowa 285 &bull; 25 km od Rzeszowa &bull; 80 km od Soliny
       </div>
       
       <h1 class="hero-title">Domek całoroczny na ponad 1 ha działki &mdash; cisza, las i prywatne jacuzzi</h1>
       
       <p class="hero-subtitle">
-        Kameralny, komfortowy obiekt wykończony drewnem. Obecnie do dyspozycji 10 miejsc noclegowych (docelowo do 18 osób). 4 niezależne sypialnie z prywatnymi łazienkami, ogromna 1-hektarowa przestrzeń i pełna prywatność.
+        Kameralny, komfortowy obiekt wykończony drewnem. Ranczo znajduje się zaledwie <strong>25 km od Rzeszowa</strong> i <strong>80 km od Soliny</strong>. Obecnie do dyspozycji 10 miejsc noclegowych (docelowo do 18 osób). 4 niezależne sypialnie z prywatnymi łazienkami, ogromna 1-hektarowa przestrzeń i pełna prywatność.
       </p>
       
       <div class="hero-features">
@@ -1167,7 +1261,7 @@
       <h2 class="section-heading">Nowy standard wypoczynku na Podkarpaciu</h2>
       
       <p class="section-desc">
-        Ranczo u Górala to nowo otwarty, całoroczny domek położony w Żarnowej (gmina Strzyżów, woj. podkarpackie) na rozległej działce o powierzchni <strong>ponad 1 hektara</strong>, bezpośrednio przy ścianie lasu.
+        Ranczo u Górala to nowo otwarty, całoroczny domek położony w Żarnowej (gmina Strzyżów, woj. podkarpackie) na rozległej działce o powierzchni <strong>ponad 1 hektara</strong>, bezpośrednio przy ścianie lasu. <strong>Ranczo znajduje się 25 km od Rzeszowa i 80 km od Soliny</strong>, co gwarantuje szybki i wygodny dojazd oraz doskonałą bazę wypadową.
       </p>
       <p class="section-desc">
         Na ten moment obiekt oferuje komfortowe warunki dla <strong>maksymalnie 10 osób</strong> z perspektywą rozszerzenia <strong>docelowo do 18 gości</strong>. Wnętrze wykończone naturalnym drewnem mieści 4 niezależne sypialnie, z których każda posiada własną, nowoczesną łazienkę.
@@ -1207,7 +1301,7 @@
     </div>
     
     <div class="section-media">
-      <img src="images/sekcja 1.jpg" alt="Ranczo u Górala - Wnętrze domku" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+      <img src="https://i.ibb.co/3mCsjLSH/769032935-122105262255422300-283267619270869382-n.jpg" alt="Ranczo u Górala - Wnętrze domku" loading="lazy" decoding="async" referrerpolicy="no-referrer">
       <div class="section-media-badge">> 1 ha prywatnego terenu</div>
     </div>
   </section>
@@ -1221,10 +1315,16 @@
       <h2 class="section-heading">Bardzo blisko do wspaniałych atrakcji</h2>
       
       <p class="section-desc">
-        Lokalizacja w Żarnowej to doskonała baza wypadowa do aktywnego spędzania czasu, odkrywania niezwykłej historii regionu i delektowania się lokalną kuchnią.
+        Lokalizacja w Żarnowej to doskonała baza wypadowa &mdash; ranczo znajduje się <strong>25 km od Rzeszowa</strong> i <strong>80 km od Soliny</strong>. To idealne miejsce do aktywnego spędzania czasu, odkrywania niezwykłej historii regionu i delektowania się lokalną kuchnią.
       </p>
       
       <div class="cards-subgrid">
+        <div class="card-item">
+          <span class="card-item-tag">Strategiczne położenie</span>
+          <h3 class="card-item-title">25 km Rzeszów &bull; 80 km Solina</h3>
+          <p class="card-item-desc">Ranczo znajduje się zaledwie 25 km od Rzeszowa i 80 km od Soliny — szybki dojazd ze stolicy województwa i świetny punkt wypadowy w Bieszczady.</p>
+        </div>
+
         <div class="card-item">
           <span class="card-item-tag">Aktywny wypoczynek</span>
           <h3 class="card-item-title">Spływy kajakowe</h3>
@@ -1266,7 +1366,7 @@
     </div>
     
     <div class="section-media">
-      <img src="images/sekcja 2.jpg" alt="Ranczo u Górala - Okolica i natura" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+      <img src="https://i.postimg.cc/rpWMgQKs/775726613-1794744744859983-7378924865781615572-n-(1).jpg" alt="Ranczo u Górala - Okolica i natura" loading="lazy" decoding="async" referrerpolicy="no-referrer">
       <div class="section-media-badge">Pogórze Strzyżowskie</div>
     </div>
   </section>
@@ -1279,21 +1379,64 @@
       <span class="section-number">03 &mdash; FOTOGALERIA</span>
       <h2 class="section-heading">Galeria obiektu, wnętrz i ogrodu</h2>
       <p class="section-desc" style="margin: 0 auto;">
-        Obejrzyj pełną galerię zdjęć Rancza u Górala. Kliknij dowolną fotografię, aby otworzyć wygodny pełnoekranowy podgląd.
+        Obejrzyj pełną galerię zdjęć Rancza u Górala (40 zdjęć). Kliknij dowolną fotografię, aby otworzyć wygodny pełnoekranowy podgląd.
       </p>
     </div>
     
     <div class="gallery-grid" id="gallery-container">
-      <!-- Generowane przez lekki skrypt JS -->
+      <!-- Generowane przez lekki skrypt JS dla maksymalnej wydajności -->
     </div>
   </section>
 
   <!-- ==========================================================================
-       4. SEKCJE TREŚCI (ZIG-ZAG 04: DLA KOGO)
+       SEKCJA FILMÓW I ROLEK (REELS / WIDEO)
+       ========================================================================== -->
+  <section class="videos-section-wrapper" id="filmy">
+    <div class="videos-header">
+      <span class="section-number">04 &mdash; VIDEO & REELS</span>
+      <h2 class="section-heading">Zobacz Ranczo na filmach</h2>
+      <p class="section-desc" style="margin: 0 auto;">
+        Obejrzyj krótkie relacje wideo z naszego domku, gorącego jacuzzi, terenu rekreacyjnego i klimatu panującego na Ranczu u Górala.
+      </p>
+    </div>
+    
+    <div class="videos-grid">
+      <div class="video-card">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1067956016204824%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" loading="lazy"></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1428515995828676%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" loading="lazy"></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1073096428386827%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" loading="lazy"></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1314440620597525%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" loading="lazy"></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1591988062583808%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" loading="lazy"></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1080263781337595%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" loading="lazy"></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1757009958883343%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" loading="lazy"></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1447235057224577%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" loading="lazy"></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2097875160801402%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. SEKCJE TREŚCI (ZIG-ZAG 05: DLA KOGO)
        ========================================================================== -->
   <section class="section" id="dla-kogo">
     <div class="section-content">
-      <span class="section-number">04 &mdash; DOPASOWANE DO TWOICH POTRZEB</span>
+      <span class="section-number">05 &mdash; DOPASOWANE DO TWOICH POTRZEB</span>
       <h2 class="section-heading">Dla kogo stworzyliśmy to miejsce?</h2>
       
       <p class="section-desc">
@@ -1330,21 +1473,21 @@
     </div>
     
     <div class="section-media">
-      <img src="images/z39.jpg" alt="Ranczo u Górala - Relaks i Jacuzzi" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+      <img src="https://i.ibb.co/k29hRKmW/777620663-1979899632711111-2953381021514928501-n-1.jpg" alt="Ranczo u Górala - Relaks i Jacuzzi" loading="lazy" decoding="async" referrerpolicy="no-referrer">
       <div class="section-media-badge">Prywatne Jacuzzi</div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       4. SEKCJE TREŚCI (ZIG-ZAG 05: KONTAKT I REZERWACJA)
+       4. SEKCJE TREŚCI (ZIG-ZAG 06: KONTAKT I REZERWACJA)
        ========================================================================== -->
   <section class="section" id="kontakt">
     <div class="section-content" style="max-width: 100%;">
-      <span class="section-number">05 &mdash; REZERWACJA I KONTAKT</span>
+      <span class="section-number">06 &mdash; REZERWACJA I KONTAKT</span>
       <h2 class="section-heading">Skontaktuj się i zapytaj o wolny termin</h2>
       
       <p class="section-desc">
-        Chętnie odpowiemy na wszystkie pytania dotyczące domku, dostępności terminów, jacuzzi oraz indywidualnych ustaleń pobytu.
+        Chętnie odpowiemy na wszystkie pytania dotyczące domku, dostępności terminów, jacuzzi oraz indywidualnych ustaleń pobytu. Ranczo znajduje się 25 km od Rzeszowa i 80 km od Soliny.
       </p>
       
       <div class="contact-grid">
@@ -1358,13 +1501,24 @@
           <div class="contact-box-sub">Zadzwoń bezpośrednio i uzyskaj szybką odpowiedź</div>
           <a href="tel:791757553" class="btn-cta" style="margin-top: 10px;">Zadzwoń teraz</a>
         </div>
+
+        <div class="contact-box">
+          <div>
+            <span class="contact-box-label">Napisz do nas (E-mail)</span>
+            <div class="contact-box-val" style="font-size: 17px; word-break: break-all;">
+              <a href="mailto:pieta.marcin@wp.pl">pieta.marcin@wp.pl</a>
+            </div>
+          </div>
+          <div class="contact-box-sub">Wyślij zapytanie o dostępność lub rezerwację</div>
+          <a href="mailto:pieta.marcin@wp.pl" class="btn-cta" style="margin-top: 10px;">Napisz e-mail</a>
+        </div>
         
         <div class="contact-box">
           <div>
-            <span class="contact-box-label">Adres Obiektu</span>
+            <span class="contact-box-label">Adres i Położenie</span>
             <div class="contact-box-val">Żarnowa 285</div>
           </div>
-          <div class="contact-box-sub">38-100 Strzyżów, woj. podkarpackie</div>
+          <div class="contact-box-sub">38-100 Strzyżów &bull; 25 km od Rzeszowa &bull; 80 km od Soliny</div>
           <a href="https://maps.google.com/?q=Żarnowa+285+Strzyżów" target="_blank" rel="noopener noreferrer" class="btn-action" style="margin-top: 10px;">Wyznacz trasę w Google Maps &rarr;</a>
         </div>
         
@@ -1380,15 +1534,16 @@
     </div>
     
     <div class="section-media">
-      <img src="images/z38.jpg" alt="Ranczo u Górala - Ogród i teren" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+      <img src="https://i.ibb.co/FLbtwR2P/775726613-1794744744859983-7378924865781615572-n-1.jpg" alt="Ranczo u Górala - Ogród i teren" loading="lazy" decoding="async" referrerpolicy="no-referrer">
       <div class="section-media-badge">Żarnowa 285 &bull; Strzyżów</div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       6. STOPKA
+       6. STOPKA (CIEMNIEJSZE TŁO Z GÓRNĄ KRAWĘDZIĄ W KSZTAŁCIE FALI/ŁUKU)
        ========================================================================== -->
   <footer>
+    <!-- Górne wcięcie łukowe / fala SVG -->
     <div class="footer-wave">
       <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M0,0 C300,90 900,90 1200,0 L1200,120 L0,120 Z" fill="#231E19"></path>
@@ -1413,6 +1568,7 @@
             <li><a href="#udogodnienia">Udogodnienia</a></li>
             <li><a href="#atrakcje">Atrakcje w okolicy</a></li>
             <li><a href="#galeria">Fotogaleria</a></li>
+            <li><a href="#filmy">Filmy i Rolki</a></li>
             <li><a href="#dla-kogo">Dla kogo</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
@@ -1424,15 +1580,18 @@
             Żarnowa 285<br>
             38-100 Strzyżów<br>
             woj. podkarpackie<br>
-            Tel: <a href="tel:791757553" style="color: var(--accent);">791 757 553</a>
+            <strong>25 km od Rzeszowa &bull; 80 km od Soliny</strong><br>
+            Tel: <a href="tel:791757553" style="color: var(--accent);">791 757 553</a><br>
+            E-mail: <a href="mailto:pieta.marcin@wp.pl" style="color: var(--accent);">pieta.marcin@wp.pl</a>
           </p>
         </div>
       </div>
       
+      <!-- Wyśrodkowany e-mail / kontakt w stopce -->
       <div class="footer-email-center">
         <div>Masz pytania dotyczące pobytu lub rezerwacji?</div>
         <div>
-          <a href="tel:791757553">Tel: 791 757 553</a>
+          <a href="tel:791757553">Tel: 791 757 553</a> &nbsp;&bull;&nbsp; <a href="mailto:pieta.marcin@wp.pl">pieta.marcin@wp.pl</a>
         </div>
       </div>
       
@@ -1471,7 +1630,7 @@
   </div>
 
   <!-- ==========================================================================
-       SKRYPTY JAVASCRIPT
+       SKRYPTY JAVASCRIPT (CZYSTY, LEKKI KOD)
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1498,50 +1657,51 @@
         });
       }
 
-      // 2. Galeria 40 zdjęć
+      // 2. All 40 Gallery Images (zastąpione 32 zdjęcia nowymi linkami + zachowane pozostałe)
       const galleryImages = [
-        "images/z1.jpg",
-        "images/z2.jpg",
-        "images/z3.jpg",
-        "images/z4.jpg",
-        "images/z5.jpg",
-        "images/z6.jpg",
-        "images/z7.jpg",
-        "images/z8.jpg",
-        "images/z9.jpg",
-        "images/z10.jpg",
-        "images/z11.jpg",
-        "images/z12.jpg",
-        "images/z13.jpg",
-        "images/z14.jpg",
-        "images/z15.jpg",
-        "images/z16.jpg",
-        "images/z17.jpg",
-        "images/z18.jpg",
-        "images/z19.jpg",
-        "images/z20.jpg",
-        "images/z21.jpg",
-        "images/z22.jpg",
-        "images/z23.jpg",
-        "images/z24.jpg",
-        "images/z25.jpg",
-        "images/z26.jpg",
-        "images/z27.jpg",
-        "images/z28.jpg",
-        "images/z29.jpg",
-        "images/z30.jpg",
-        "images/z31.jpg",
-        "images/z32.jpg",
-        "images/z33.jpg",
-        "images/z34.jpg",
-        "images/z35.jpg",
-        "images/z36.jpg",
-        "images/z37.jpg",
-        "images/z38.jpg",
-        "images/z39.jpg",
-        "images/z40.jpg"
+        "https://i.ibb.co/3mCsjLSH/769032935-122105262255422300-283267619270869382-n.jpg",
+        "https://i.ibb.co/xtv5d0zh/768963568-122105262339422300-6561241769418835323-n.jpg",
+        "https://i.ibb.co/GQ4NfC0D/769051422-122105262399422300-17403440766073956-n.jpg",
+        "https://i.ibb.co/k22hfgsV/768963132-122105262585422300-7005273041075571276-n.jpg",
+        "https://i.ibb.co/pvSqSn3K/768963070-122105262663422300-4586021262434033466-n.jpg",
+        "https://i.ibb.co/B5Qh01BY/768992378-122105262753422300-1207525654136729075-n.jpg",
+        "https://i.ibb.co/jkgqN2CN/769051842-122105262843422300-8340312587898734795-n.jpg",
+        "https://i.ibb.co/99dCCBWK/769056320-122105262921422300-1681986004338972837-n.jpg",
+        "https://i.ibb.co/XrNVZ3sR/768987794-122105262981422300-4027080823806270436-n.jpg",
+        "https://i.ibb.co/tM5jvjBQ/769007333-122105263065422300-137344023645452630-n.jpg",
+        "https://i.ibb.co/BkvVBQj/768941455-122105263173422300-6022859613526721767-n.jpg",
+        "https://i.ibb.co/m7ygwkc/768987800-122105263245422300-6305828592665623187-n.jpg",
+        "https://i.ibb.co/XZxYKv1n/768992384-122105263371422300-4856415714265361896-n.jpg",
+        "https://i.ibb.co/4n7wsTfg/768976251-122105263431422300-1743003416655206308-n.jpg",
+        "https://i.ibb.co/JRh4bndf/767872387-122105263491422300-2497388772083126420-n.jpg",
+        "https://i.ibb.co/RpTQqCQN/769182866-122105263581422300-6495423246210253138-n.jpg",
+        "https://i.ibb.co/9kttsBfc/769032898-122105263635422300-3192891482482475117-n.jpg",
+        "https://i.ibb.co/mr3sktKg/768967709-122105263695422300-1662535358503525226-n.jpg",
+        "https://i.ibb.co/nMYzVtnT/769051423-122105263737422300-4070466212584489893-n.jpg",
+        "https://i.ibb.co/FbgcWTS2/768987810-122105263791422300-5252966808147699288-n.jpg",
+        "https://i.ibb.co/LD09Tz3K/768934009-122105263863422300-7032514248906683156-n.jpg",
+        "https://i.ibb.co/gFW1YRt7/768987800-122105264025422300-673880638483981953-n.jpg",
+        "https://i.ibb.co/s94BHxPb/768987649-122105264079422300-2040456279653554943-n.jpg",
+        "https://i.ibb.co/0yfW7jmB/768932431-122105264259422300-7285984417710324495-n.jpg",
+        "https://i.ibb.co/bRzwNZHz/769144572-122105264499422300-7190116169837120251-n.jpg",
+        "https://i.ibb.co/cKCV8hVt/768987633-122105264631422300-6470620623936886837-n.jpg",
+        "https://i.ibb.co/WvHk0D6v/769175981-122105264763422300-2292156434830682947-n.jpg",
+        "https://i.ibb.co/hF9q9y8T/768954375-122105264847422300-5396517139585820027-n.jpg",
+        "https://i.ibb.co/B2L1SfWD/767692006-122105264901422300-407575890316149459-n.jpg",
+        "https://i.ibb.co/0kwcQfb/769003341-122105264949422300-2140424198303345674-n.jpg",
+        "https://i.ibb.co/VYKPNjXk/768963555-122105265063422300-1246561268759233171-n.jpg",
+        "https://i.ibb.co/VptN3wzJ/768934007-122105265243422300-5046750901815795529-n.jpg",
+        "https://i.ibb.co/qYYJ9VHx/769051886-122105265327422300-7092906755035753501-n.jpg",
+        "https://i.ibb.co/3mTnJZX2/769051372-122105265423422300-446929550492129310-n.jpg",
+        "https://i.ibb.co/DfwMKchx/779178745-1782842669390696-1193726361815532660-n-1.jpg",
+        "https://i.ibb.co/k29hRKmW/777620663-1979899632711111-2953381021514928501-n-1.jpg",
+        "https://i.ibb.co/FLbtwR2P/775726613-1794744744859983-7378924865781615572-n-1.jpg",
+        "https://i.ibb.co/cKKrKTbN/777259774-4628496064095715-7305745894415561260-n-1.jpg",
+        "https://i.ibb.co/b541GjKr/774361208-2561150261067430-5826220020406502740-n-1.jpg",
+        "https://i.ibb.co/yFFvcdDK/775543980-1054698533931810-7850543501891667282-n-1.jpg"
       ];
 
+      // Dynamiczne renderowanie galerii z zachowaniem maksymalnej wydajności
       const galleryContainer = document.getElementById('gallery-container');
       if (galleryContainer) {
         const fragment = document.createDocumentFragment();
@@ -1604,6 +1764,7 @@
         lightboxImg.src = galleryImages[currentIndex];
         lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
         
+        // Preload next image
         const nextIdx = (currentIndex + 1) % galleryImages.length;
         const preloadNext = new Image();
         preloadNext.src = galleryImages[nextIdx];
@@ -1638,7 +1799,7 @@
         if (e.key === 'ArrowLeft') prevImage();
       });
 
-      // 4. Scroll-to-top button
+      // 5. Scroll-to-top button JS (scrollY > 300px, smooth scroll)
       const scrollTopBtn = document.getElementById('scrollTopBtn');
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
@@ -1654,7 +1815,7 @@
         });
       }
 
-      // 5. Animacje scroll-reveal
+      // 7. Animacje scroll-reveal (IntersectionObserver, threshold 0.2)
       const revealElements = document.querySelectorAll('.section, .gallery-section-wrapper');
       if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries, obs) => {
@@ -1675,218 +1836,5 @@
       }
     });
   </script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // 1. Aktualizacja roku w stopce
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-    // 2. Mobile Menu Toggle
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const mobileDropdown = document.getElementById('mobile-dropdown');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    if (mobileToggle && mobileDropdown) {
-      mobileToggle.addEventListener('click', () => {
-        mobileToggle.classList.toggle('active');
-        mobileDropdown.classList.toggle('open');
-      });
-
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileToggle.classList.remove('active');
-          mobileDropdown.classList.remove('open');
-        });
-      });
-    }
-
-    // 3. Obsługa Lightboxa (pełnowymiarowego podglądu)
-    let galleryImages = []; // Tablica uzupełniana dynamicznie z CMS
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCounter = document.getElementById('lightbox-counter');
-    const lightboxClose = document.getElementById('lightbox-close');
-    const lightboxPrev = document.getElementById('lightbox-prev');
-    const lightboxNext = document.getElementById('lightbox-next');
-    let currentIndex = 0;
-
-    function openLightbox(index) {
-      if (galleryImages.length === 0) return;
-      currentIndex = index;
-      updateLightbox();
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    function updateLightbox() {
-      if (!galleryImages[currentIndex]) return;
-      lightboxImg.src = galleryImages[currentIndex];
-      lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
-      
-      const nextIdx = (currentIndex + 1) % galleryImages.length;
-      const preloadNext = new Image();
-      preloadNext.src = galleryImages[nextIdx];
-    }
-
-    function nextImage() {
-      if (galleryImages.length === 0) return;
-      currentIndex = (currentIndex + 1) % galleryImages.length;
-      updateLightbox();
-    }
-
-    function prevImage() {
-      if (galleryImages.length === 0) return;
-      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-      updateLightbox();
-    }
-
-    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-    if (lightboxNext) lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
-    if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
-    
-    if (lightbox) {
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
-          closeLightbox();
-        }
-      });
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox || !lightbox.classList.contains('active')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') nextImage();
-      if (e.key === 'ArrowLeft') prevImage();
-    });
-
-    // 4. Scroll-to-top button
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollTopBtn.classList.add('visible');
-      } else {
-        scrollTopBtn.classList.remove('visible');
-      }
-    }, { passive: true });
-
-    if (scrollTopBtn) {
-      scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
-
-    // 5. Animacje scroll-reveal
-    const revealElements = document.querySelectorAll('.section, .gallery-section-wrapper');
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.2,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      revealElements.forEach(el => observer.observe(el));
-    } else {
-      revealElements.forEach(el => el.classList.add('revealed'));
-    }
-
-    // 6. Podpięcie ID i pobieranie danych z pliku JSON (CMS)
-    const oDomkuImg = document.querySelector('#o-domku .section-media img');
-    if (oDomkuImg) oDomkuImg.id = 'o-domku-img';
-
-    const atrakcjeImg = document.querySelector('#atrakcje .section-media img');
-    if (atrakcjeImg) atrakcjeImg.id = 'atrakcje-img';
-
-    const dlaKogoImg = document.querySelector('#dla-kogo .section-media img');
-    if (dlaKogoImg) dlaKogoImg.id = 'dla-kogo-img';
-
-    const kontaktImg = document.querySelector('#kontakt .section-media img');
-    if (kontaktImg) kontaktImg.id = 'kontakt-img';
-
-    fetch('/ugorala/content/strona-glowna.json')
-      .then(res => res.json())
-      .then(data => {
-        // Obrazki główne w sekcjach
-        if (data.o_domku) {
-          setImage('#o-domku-img', data.o_domku.image);
-          setText('#o-domku-heading', data.o_domku.heading);
-        }
-        if (data.sekcja_atrakcje) {
-          setImage('#atrakcje-img', data.sekcja_atrakcje.image);
-          setText('#atrakcje-heading', data.sekcja_atrakcje.heading);
-        }
-        if (data.sekcja_dla_kogo) {
-          setImage('#dla-kogo-img', data.sekcja_dla_kogo.image);
-          setText('#dla-kogo-heading', data.sekcja_dla_kogo.heading);
-        }
-        if (data.sekcja_kontakt) {
-          setImage('#kontakt-img', data.sekcja_kontakt.image);
-          setText('#kontakt-heading', data.sekcja_kontakt.heading);
-        }
-
-        // Renderowanie Głównej Galerii z JSON
-        const galleryContainer = document.getElementById('gallery-container');
-        if (galleryContainer && data.galeria && Array.isArray(data.galeria)) {
-          galleryContainer.innerHTML = ''; // Wyczyszczenie duplikatów
-          
-          // Zapisujemy ścieżki do globalnej tablicy na potrzeby Lightboxa
-          galleryImages = data.galeria.map(item => typeof item === 'string' ? item : item.zdjecie);
-
-          const fragment = document.createDocumentFragment();
-          galleryImages.forEach((url, idx) => {
-            const card = document.createElement('div');
-            card.className = 'gallery-card';
-            card.setAttribute('data-index', idx);
-            
-            const isPriority = idx < 4;
-            card.innerHTML = `
-              <img src="${url}" 
-                   alt="Ranczo u Górala - Zdjęcie ${idx + 1}" 
-                   ${isPriority ? 'loading="eager" fetchpriority="high"' : 'loading="lazy" fetchpriority="low"'} 
-                   decoding="async" 
-                   referrerpolicy="no-referrer"
-                   class="gallery-img" 
-                   width="600" 
-                   height="450">
-              <div class="gallery-overlay">
-                <div class="gallery-zoom-icon">
-                  <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                </div>
-              </div>
-            `;
-            
-            card.addEventListener('click', () => {
-              openLightbox(idx);
-            });
-            
-            fragment.appendChild(card);
-          });
-          
-          galleryContainer.appendChild(fragment);
-        }
-      })
-      .catch(err => console.error("Błąd ładowania pliku JSON:", err));
-  });
-
-  function setText(selector, val) {
-    const el = document.querySelector(selector);
-    if (el && val) el.textContent = val;
-  }
-
-  function setImage(selector, src) {
-    const el = document.querySelector(selector);
-    if (el && src) el.src = src;
-  }
-</script>
 </body>
 </html>
