@@ -1,6 +1,6 @@
 {
   "name": "Ranczo u Górala",
-  "description": "Domek całoroczny na wynajem w Żarnowej (38-100 Strzyżów, woj. podkarpackie) na ponad 1-hektarowej działce przy lesie z jacuzzi. Obecnie do 10 osób, docelowo do 18.",
+  "description": "Domek całoroczny na wynajem w Żarnowej (Strzyżów, woj. podkarpackie) – 25 km od Rzeszowa, 80 km od Soliny. Ponad 1 ha działki przy lesie z jacuzzi. Obecnie do 10 osób, docelowo do 18.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
